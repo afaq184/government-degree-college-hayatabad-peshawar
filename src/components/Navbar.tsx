@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Logo from './Logo';
-import { SITE } from '../site';
+import { useSite } from '../context/SiteContext';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -16,6 +16,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const SITE = useSite();
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -53,7 +54,7 @@ export default function Navbar() {
               href={SITE.hedAdmissionUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-navbar-bg px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-academy-cream transition-all hover-scale shadow-md"
+              className="bg-academy-gold text-academy-green-dark px-6 py-2.5 rounded-md font-bold text-sm hover:bg-academy-gold-light transition-all hover-scale shadow-md"
             >
               Online Admission (HED)
             </a>
@@ -89,7 +90,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center mt-4 bg-white text-navbar-bg py-3 rounded-xl font-bold"
+              className="block w-full text-center mt-4 bg-academy-gold text-academy-green-dark py-3 rounded-md font-bold"
             >
               Online Admission (HED)
             </a>

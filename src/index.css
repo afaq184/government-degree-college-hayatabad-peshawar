@@ -1,23 +1,24 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&display=swap');
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
-  
-  --color-academy-green: #2563EB;
-  --color-academy-green-dark: #1E3A8A;
-  --color-academy-gold: #F59E0B;
-  --color-academy-gold-light: #06B6D4;
-  --color-academy-cream: #F8FAFC;
-  --color-navbar-bg: #172554;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+  /* Deep college-sign green + warm campus accents */
+  --color-academy-green: #0F5C3B;
+  --color-academy-green-dark: #0A3D28;
+  --color-academy-gold: #C9A227;
+  --color-academy-gold-light: #E8C547;
+  --color-academy-cream: #F3F7F4;
+  --color-navbar-bg: #0A3D28;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-white text-slate-900;
+    @apply font-sans bg-academy-cream text-slate-900;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
@@ -33,11 +34,11 @@
 }
 
 .btn-primary {
-  @apply bg-academy-green text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-academy-green-dark active:scale-95 shadow-lg hover:shadow-xl;
+  @apply bg-academy-green text-white px-6 py-3 rounded-md font-bold transition-all hover:bg-academy-green-dark active:scale-95 shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
-  @apply bg-academy-gold text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-academy-gold/90 active:scale-95 shadow-lg hover:shadow-xl;
+  @apply bg-academy-gold text-academy-green-dark px-6 py-3 rounded-md font-bold transition-all hover:bg-academy-gold-light active:scale-95 shadow-lg hover:shadow-xl;
 }
 
 .nav-link {
@@ -50,16 +51,15 @@
 
 .nav-link.active::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-full h-0.5 bg-white;
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-academy-gold-light;
 }
 
-/* Advanced Hover Effects */
 .hover-lift {
   @apply transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl;
 }
 
 .hover-glow {
-  @apply transition-all duration-500 hover:shadow-[0_0_30px_rgba(217,119,6,0.3)] hover:border-academy-gold/50;
+  @apply transition-all duration-500 hover:shadow-[0_0_28px_rgba(15,92,59,0.22)] hover:border-academy-green/30;
 }
 
 .hover-scale {
@@ -105,5 +105,5 @@
 }
 
 .logo-green .logo-accent {
-  stroke: #fbbf24;
+  stroke: #C9A227;
 }

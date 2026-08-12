@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Phone, Clock, Send, Calendar, ChevronRight, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
-import { SITE } from '../site';
-
-const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+import { useSite } from '../context/SiteContext';
 
 export default function Contact() {
+  const SITE = useSite();
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -80,7 +80,7 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Government College Peshawar map"
+                  title="Government Degree College Hayatabad map"
                   className="grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>

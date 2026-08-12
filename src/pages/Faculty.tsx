@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Microscope, Leaf, Users, Landmark, FlaskConical, Globe2, ArrowRight } from 'lucide-react';
-import { SITE } from '../site';
+import { useSite } from '../context/SiteContext';
 import { DEPARTMENTS, Department } from '../data/facultyData';
 
 type Category = 'Physical Sciences' | 'Biological Sciences' | 'Social Sciences & Humanities' | 'Support Services';
 
 export default function Faculty() {
+  const SITE = useSite();
   const [activeCategory, setActiveCategory] = useState<Category>('Physical Sciences');
 
   const categories: { id: Category; label: string; icon: React.ReactNode }[] = [

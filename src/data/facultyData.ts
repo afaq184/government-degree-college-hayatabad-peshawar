@@ -30,7 +30,7 @@ export const DEPARTMENTS: Department[] = [
     id: 'computer-science',
     name: 'Computer Science Department',
     facultyCategory: 'Physical Sciences',
-    overview: 'The Department of Computer Science at Government College Peshawar provides state-of-the-art education in computing. Equipped with modern computer labs and high-speed internet, we prepare students for dynamic careers in software development, AI, and IT. Our curriculum integrates theoretical principles with extensive practical laboratory sessions.',
+    overview: 'The Department of Computer Science at Government Degree College Hayatabad provides state-of-the-art education in computing. Equipped with modern computer labs and high-speed internet, we prepare students for dynamic careers in software development, AI, and IT. Our curriculum integrates theoretical principles with extensive practical laboratory sessions.',
     programs: ['BS Computer Science (4 Years)', 'FSc Computer Science (2 Years)', 'Free Graphic Design Course (KPITB/PAFH-IUST)']
   },
   {
@@ -127,7 +127,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Ahmad Khan',
     designation: 'Professor & Chair',
     specialization: 'Artificial Intelligence & Machine Learning',
-    email: 'ahmad.khan@gcpeshawar.edu.pk',
+    email: 'ahmad.khan@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Computer Science, University of Peshawar; Postdoc, Linköping University, Sweden',
     biography: 'Dr. Ahmad Khan has over 18 years of academic and research experience. He has published over 30 research articles in top-tier journals and has spearheaded several governmental IT initiatives in Khyber Pakhtunkhwa. He is passionate about mentoring undergraduate students in AI research.',
@@ -138,7 +138,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     ],
     googleScholar: 'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 102, Science Block A, GC Peshawar'
+    contactInfo: 'Room 102, Science Block A, GDC Hayatabad'
   },
   {
     id: 'dr-kamran-ali',
@@ -146,10 +146,10 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Kamran Ali',
     designation: 'Associate Professor',
     specialization: 'Software Engineering & Cloud Computing',
-    email: 'kamran.ali@gcpeshawar.edu.pk',
+    email: 'kamran.ali@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Software Engineering, NUST Islamabad',
-    biography: 'Kamran Ali joined GC Peshawar in 2018. His work focuses on cloud resource optimization and agile software methodologies. He coordinates the final year project defenses and industry internship programs for BS Computer Science.',
+    biography: 'Kamran Ali joined GDC Hayatabad in 2018. His work focuses on cloud resource optimization and agile software methodologies. He coordinates the final year project defenses and industry internship programs for BS Computer Science.',
     researchInterests: ['Agile Methodologies', 'Cloud Architecture Optimization', 'IoT Systems Security'],
     publications: [
       'Ali, K. "A Framework for Microservice Migration in Cloud Environments," Journal of Systems and Software, 2023.',
@@ -157,7 +157,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     ],
     googleScholar: 'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 105, Science Block A, GC Peshawar'
+    contactInfo: 'Room 105, Science Block A, GDC Hayatabad'
   },
   {
     id: 'prof-usman-shah',
@@ -165,17 +165,17 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Usman Shah',
     designation: 'Assistant Professor',
     specialization: 'Data Science & Databases',
-    email: 'usman.shah@gcpeshawar.edu.pk',
+    email: 'usman.shah@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.S. in Computer Science, FAST-NUCES Peshawar',
-    biography: 'Usman Shah has been teaching database design and data structures at GC Peshawar since 2015. He represents the department in the college sports board and coordinates computing lab upgrades.',
+    biography: 'Usman Shah has been teaching database design and data structures at GDC Hayatabad since 2015. He represents the department in the college sports board and coordinates computing lab upgrades.',
     researchInterests: ['Big Data Analytics', 'Distributed Systems', 'Relational Database Performance'],
     publications: [
       'Shah, U. "Optimizing Query Execution in Distributed NoSQL Systems," Journal of Big Data, 2022.'
     ],
     googleScholar: 'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
-    contactInfo: 'Lab Coordinator Office, Main IT Lab, GC Peshawar'
+    contactInfo: 'Lab Coordinator Office, Main IT Lab, GDC Hayatabad'
   },
   // Mathematics
   {
@@ -184,16 +184,16 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Prof. Tariq Mahmood',
     designation: 'Professor & Head',
     specialization: 'Pure Mathematics & Algebra',
-    email: 'tariq.mahmood@gcpeshawar.edu.pk',
+    email: 'tariq.mahmood@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.Phil. in Mathematics, University of Peshawar',
-    biography: 'Prof. Tariq Mahmood is one of the most senior faculty members at Government College Peshawar, with over 25 years of teaching service. He has authored multiple board text books in algebra and calculus.',
+    biography: 'Prof. Tariq Mahmood is one of the most senior faculty members at Government Degree College Hayatabad, with over 25 years of teaching service. He has authored multiple board text books in algebra and calculus.',
     researchInterests: ['Group Theory', 'Ring Theory', 'Mathematical Pedagogy'],
     publications: [
       'Mahmood, T. "On Finite Groups and Homology Relations," Peshawar Journal of Mathematics, 2019.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Room 201, Science Block B, GC Peshawar'
+    contactInfo: 'Room 201, Science Block B, GDC Hayatabad'
   },
   {
     id: 'dr-asad-rehman',
@@ -201,7 +201,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Asad Rehman',
     designation: 'Assistant Professor',
     specialization: 'Applied Mathematics & Fluid Dynamics',
-    email: 'asad.rehman@gcpeshawar.edu.pk',
+    email: 'asad.rehman@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Applied Mathematics, QAU Islamabad',
     biography: 'Asad Rehman researches mathematical modeling of fluid flows. He coordinates semester system schedules and exam evaluations for the Mathematics department.',
@@ -211,7 +211,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     ],
     googleScholar: 'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 203, Science Block B, GC Peshawar'
+    contactInfo: 'Room 203, Science Block B, GDC Hayatabad'
   },
   // Physics
   {
@@ -220,7 +220,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Bilal Ahmed',
     designation: 'Professor & Head',
     specialization: 'Quantum Physics',
-    email: 'bilal.ahmed@gcpeshawar.edu.pk',
+    email: 'bilal.ahmed@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Physics, University of Punjab',
     biography: 'Dr. Bilal Ahmed directs the physical sciences laboratory and has over 20 years of research experience in quantum information theory and lasers.',
@@ -229,7 +229,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Ahmed, B. "Decoherence Control in Multi-qubit Systems," Physical Review A, 2022.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Physics Lab Director Office, Ground Floor, GC Peshawar'
+    contactInfo: 'Physics Lab Director Office, Ground Floor, GDC Hayatabad'
   },
   {
     id: 'prof-naeem-yousaf',
@@ -237,7 +237,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Naeem Yousaf',
     designation: 'Assistant Professor',
     specialization: 'Solid State Physics',
-    email: 'naeem.yousaf@gcpeshawar.edu.pk',
+    email: 'naeem.yousaf@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.Phil. in Physics, Peshawar University',
     biography: 'Naeem Yousaf manages the physics equipment repository and coordinates practical board exams for intermediate students.',
@@ -245,7 +245,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     publications: [
       'Yousaf, N. "Structural Characterization of ZnO Thin Films," Materials Letters, 2021.'
     ],
-    contactInfo: 'Main Physics Lab, GC Peshawar'
+    contactInfo: 'Main Physics Lab, GDC Hayatabad'
   },
   // Chemistry
   {
@@ -254,7 +254,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Haroon Rasheed',
     designation: 'Professor & Chair',
     specialization: 'Organic Chemistry',
-    email: 'haroon.rasheed@gcpeshawar.edu.pk',
+    email: 'haroon.rasheed@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Chemistry, HEJ Research Institute of Chemistry, Karachi',
     biography: 'Dr. Haroon Rasheed specializes in natural product isolation and medicinal chemistry. He has successfully patented two herbal extracts for local medicinal use.',
@@ -263,7 +263,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Rasheed, H. "Bioactive Alkaloids from Indigenous Herbs of KP," Phytochemistry, 2023.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Chemistry Wing A, GC Peshawar'
+    contactInfo: 'Chemistry Wing A, GDC Hayatabad'
   },
   {
     id: 'prof-saeed-farooq',
@@ -271,7 +271,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Saeed Farooq',
     designation: 'Assistant Professor',
     specialization: 'Physical Chemistry',
-    email: 'saeed.farooq@gcpeshawar.edu.pk',
+    email: 'saeed.farooq@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'M.Phil. in Chemistry, University of Peshawar',
     biography: 'Saeed Farooq supervises chemical laboratory safety protocols and teaches chemical thermodynamics to BS students.',
@@ -279,7 +279,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     publications: [
       'Farooq, S. "Adsorption Kinetics of Heavy Metals on Clay Minerals," Journal of Hazardous Materials, 2020.'
     ],
-    contactInfo: 'Chemistry Lab B, GC Peshawar'
+    contactInfo: 'Chemistry Lab B, GDC Hayatabad'
   },
   // Botany
   {
@@ -288,7 +288,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Muhammad Irfan',
     designation: 'Professor & Head',
     specialization: 'Plant Ecology & Flora of KP',
-    email: 'irfan.botany@gcpeshawar.edu.pk',
+    email: 'irfan.botany@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Plant Ecology, Quaid-i-Azam University, Islamabad',
     biography: 'Dr. Muhammad Irfan has published extensively on the flora of northern Pakistan and Khyber Pakhtunkhwa. He maintains the college herbarium and guides seasonal flora cataloging field trips.',
@@ -297,7 +297,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Irfan, M. "Ethnobotany of District Peshawar," Pakistan Journal of Botany, 2022.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Botany Dept Office, Block C, GC Peshawar'
+    contactInfo: 'Botany Dept Office, Block C, GDC Hayatabad'
   },
   {
     id: 'prof-luqman-jamil',
@@ -305,13 +305,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Luqman Jamil',
     designation: 'Assistant Professor',
     specialization: 'Plant Physiology',
-    email: 'luqman.jamil@gcpeshawar.edu.pk',
+    email: 'luqman.jamil@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.Phil. in Botany, University of Peshawar',
     biography: 'Luqman Jamil oversees botany laboratory courses and advises the student botany society.',
     researchInterests: ['Salt Stress in Crops', 'Phytohormones'],
     publications: [],
-    contactInfo: 'Botany Lab 1, GC Peshawar'
+    contactInfo: 'Botany Lab 1, GDC Hayatabad'
   },
   // Zoology
   {
@@ -320,7 +320,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Khalid Khan',
     designation: 'Professor & Chair',
     specialization: 'Entomology & Parasitology',
-    email: 'khalid.zoology@gcpeshawar.edu.pk',
+    email: 'khalid.zoology@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Zoology, University of Peshawar',
     biography: 'Dr. Khalid Khan is a recognized authority on vector-borne insect studies in Peshawar valley. He coordinates research seminars in biological sciences.',
@@ -329,7 +329,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Khan, K. "Seasonal Abundance of Mosquito Species in Peshawar Valley," Acta Tropica, 2021.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Zoology Block, GC Peshawar'
+    contactInfo: 'Zoology Block, GDC Hayatabad'
   },
   {
     id: 'prof-zubair-baig',
@@ -337,13 +337,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Zubair Baig',
     designation: 'Assistant Professor',
     specialization: 'Molecular Biology',
-    email: 'zubair.zoology@gcpeshawar.edu.pk',
+    email: 'zubair.zoology@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'M.Phil. in Zoology, Hazara University',
     biography: 'Zubair Baig teaches molecular genetics and coordinates student practicals in the zoology labs.',
     researchInterests: ['Genetics', 'Cell Biology'],
     publications: [],
-    contactInfo: 'Zoology Lab A, GC Peshawar'
+    contactInfo: 'Zoology Lab A, GDC Hayatabad'
   },
   // English
   {
@@ -352,13 +352,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Prof. Imran Qureshi',
     designation: 'Professor & Head',
     specialization: 'English Literature & Postcolonial Studies',
-    email: 'imran.qureshi@gcpeshawar.edu.pk',
+    email: 'imran.qureshi@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'M.A. in English Literature, University of Peshawar',
-    biography: 'Prof. Imran Qureshi has taught English literature and language at GC Peshawar since 2002. He serves as the chief editor of the college magazine and mentors the student literary society.',
+    biography: 'Prof. Imran Qureshi has taught English literature and language at GDC Hayatabad since 2002. He serves as the chief editor of the college magazine and mentors the student literary society.',
     researchInterests: ['Modern English Poetry', 'Postcolonial Pakistani Literature'],
     publications: [],
-    contactInfo: 'English Department Wing, Admin Block, GC Peshawar'
+    contactInfo: 'English Department Wing, Admin Block, GDC Hayatabad'
   },
   {
     id: 'dr-mansoor-shafiq',
@@ -366,7 +366,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Mansoor Shafiq',
     designation: 'Assistant Professor',
     specialization: 'Linguistics & Discourse Analysis',
-    email: 'mansoor.shafiq@gcpeshawar.edu.pk',
+    email: 'mansoor.shafiq@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Linguistics, BZU Multan',
     biography: 'Mansoor Shafiq joined the department in 2020. He coordinates communication skills courses across all BS majors and coordinates language laboratory sessions.',
@@ -376,7 +376,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     ],
     googleScholar: 'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
-    contactInfo: 'English Dept Office, Admin Block, GC Peshawar'
+    contactInfo: 'English Dept Office, Admin Block, GDC Hayatabad'
   },
   // Political Science
   {
@@ -385,7 +385,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Sajid Ali',
     designation: 'Professor & Chair',
     specialization: 'Comparative Politics & Governance',
-    email: 'sajid.ps@gcpeshawar.edu.pk',
+    email: 'sajid.ps@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Political Science, University of Peshawar',
     biography: 'Dr. Sajid Ali is an expert on constitutional governance and public policy systems in South Asia. He organizes annual student model parliaments.',
@@ -394,7 +394,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Ali, S. "Federalism and the 18th Amendment: A Ten Year Review," Pakistan Horizon, 2022.'
     ],
     googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Room 301, Humanities Block, GC Peshawar'
+    contactInfo: 'Room 301, Humanities Block, GDC Hayatabad'
   },
   {
     id: 'prof-farhan-baig',
@@ -402,13 +402,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Farhan Baig',
     designation: 'Assistant Professor',
     specialization: 'International Relations',
-    email: 'farhan.ps@gcpeshawar.edu.pk',
+    email: 'farhan.ps@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'M.Phil. in International Relations, Quaid-i-Azam University',
     biography: 'Farhan Baig conducts courses on foreign policy and international organizations. He advises the college debating society.',
     researchInterests: ['CPEC and Regional Security', 'Foreign Policy of Pakistan'],
     publications: [],
-    contactInfo: 'Room 303, Humanities Block, GC Peshawar'
+    contactInfo: 'Room 303, Humanities Block, GDC Hayatabad'
   },
   // Urdu
   {
@@ -417,7 +417,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Abdul Latif',
     designation: 'Professor & Head',
     specialization: 'Urdu Prose & Literary History',
-    email: 'latif.urdu@gcpeshawar.edu.pk',
+    email: 'latif.urdu@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Urdu Literature, University of Peshawar',
     biography: 'Dr. Abdul Latif has authored three books on the history of Urdu fiction in the frontier region. He coordinates poetry symposia (Mushairas) at the college.',
@@ -425,7 +425,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     publications: [
       'Latif, A. "Historical Evolution of Urdu Novel in KP," Daryaft, 2021.'
     ],
-    contactInfo: 'Urdu Office, Humanities Block, GC Peshawar'
+    contactInfo: 'Urdu Office, Humanities Block, GDC Hayatabad'
   },
   {
     id: 'prof-arman-malik',
@@ -433,13 +433,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Arman Malik',
     designation: 'Assistant Professor',
     specialization: 'Urdu Poetry',
-    email: 'arman.urdu@gcpeshawar.edu.pk',
+    email: 'arman.urdu@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.Phil. in Urdu literature, Peshawar University',
     biography: 'Arman Malik teaches classical ghazal history and coordinates drama productions for the student arts society.',
     researchInterests: ['Classical Urdu Ghazal', 'Modern Progressive Poetry'],
     publications: [],
-    contactInfo: 'Urdu Dept Room 12, GC Peshawar'
+    contactInfo: 'Urdu Dept Room 12, GDC Hayatabad'
   },
   // Arabic
   {
@@ -448,7 +448,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Dr. Hafiz Ur Rehman',
     designation: 'Professor & Head',
     specialization: 'Arabic Grammar & Linguistics',
-    email: 'hafiz.arabic@gcpeshawar.edu.pk',
+    email: 'hafiz.arabic@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'Ph.D. in Arabic, University of Peshawar',
     biography: 'Dr. Hafiz Ur Rehman teaches classical Arabic morphology, rhetoric, and literature. He conducts specialized workshops in Arabic calligraphy.',
@@ -465,13 +465,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Shahid Khan',
     designation: 'Associate Professor & Head',
     specialization: 'South Asian History',
-    email: 'shahid.history@gcpeshawar.edu.pk',
+    email: 'shahid.history@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male2.png`,
     qualification: 'M.Phil. in History, University of Peshawar',
     biography: 'Shahid Khan specializes in the regional history of the Khyber Pass and the Gandhara civilization. He organizes historical trips for students.',
     researchInterests: ['Ancient Gandhara History', 'KP Political History'],
     publications: [],
-    contactInfo: 'History Dept, Humanities Block, GC Peshawar'
+    contactInfo: 'History Dept, Humanities Block, GDC Hayatabad'
   },
   // Geography
   {
@@ -480,7 +480,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Yasir Shah',
     designation: 'Assistant Professor & Head',
     specialization: 'GIS & Remote Sensing',
-    email: 'yasir.geog@gcpeshawar.edu.pk',
+    email: 'yasir.geog@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'Ph.D. in Geography, University of Peshawar',
     biography: 'Yasir Shah teaches physical geography and guides mapping practicums using GIS platforms. He coordinates academic environmental surveys.',
@@ -488,7 +488,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     publications: [
       'Shah, Y. "Urban Expansion Analysis of Peshawar Valley using RS Data," Pakistan Geographical Review, 2022.'
     ],
-    contactInfo: 'Geography Laboratory Room, GC Peshawar'
+    contactInfo: 'Geography Laboratory Room, GDC Hayatabad'
   },
   // Economics
   {
@@ -497,12 +497,12 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     name: 'Waheed Ullah',
     designation: 'Associate Professor & Head',
     specialization: 'Development Economics & Public Finance',
-    email: 'waheed.econ@gcpeshawar.edu.pk',
+    email: 'waheed.econ@gdchayatabad.edu.pk',
     photo: `${baseUrl}faculty/male1.png`,
     qualification: 'M.Phil. in Economics, University of Peshawar',
     biography: 'Waheed Ullah has taught economics to intermediate and degree classes for over 15 years. He oversees budgeting seminars and acts as student advisor.',
     researchInterests: ['Public Debt in Pakistan', 'KP Local Economy Dynamics'],
     publications: [],
-    contactInfo: 'Economics Wing, Admin Block, GC Peshawar'
+    contactInfo: 'Economics Wing, Admin Block, GDC Hayatabad'
   }
 ];

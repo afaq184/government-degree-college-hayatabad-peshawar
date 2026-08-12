@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,7 +16,21 @@ import News from './pages/News';
 import Apply from './pages/Apply';
 import FacultyList from './pages/FacultyList';
 import FacultyProfile from './pages/FacultyProfile';
-import StudentProfile from './pages/StudentProfile';
+import { AdminAuthProvider } from './context/AdminAuthContext';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminGallery from './pages/admin/AdminGallery';
+import AdminNews from './pages/admin/AdminNews';
+import AdminSite from './pages/admin/AdminSite';
+
+function AdminRoot() {
+  return (
+    <AdminAuthProvider>
+      <Outlet />
+    </AdminAuthProvider>
+  );
+}
 
 const router = createHashRouter([
   {
@@ -38,8 +52,20 @@ const router = createHashRouter([
     ],
   },
   {
-    path: '/student/:token',
-    element: <StudentProfile />,
+    path: '/admin',
+    element: <AdminRoot />,
+    children: [
+      { path: 'login', element: <AdminLogin /> },
+      {
+        element: <AdminLayout />,
+        children: [
+          { index: true, element: <AdminDashboard /> },
+          { path: 'gallery', element: <AdminGallery /> },
+          { path: 'news', element: <AdminNews /> },
+          { path: 'site', element: <AdminSite /> },
+        ],
+      },
+    ],
   },
   {
     path: '*',

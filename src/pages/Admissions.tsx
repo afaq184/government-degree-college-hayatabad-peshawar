@@ -1,9 +1,10 @@
 import { Search, FileText, UserCheck, CreditCard, CheckCircle2, HelpCircle, ChevronDown, ExternalLink, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SITE } from '../site';
+import { useSite } from '../context/SiteContext';
 
 export default function Admissions() {
+  const SITE = useSite();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqs = [
@@ -27,7 +28,7 @@ export default function Admissions() {
 
   return (
     <div className="flex flex-col">
-      <section className="pt-1 pb-14 md:pt-2 md:pb-16 bg-white overflow-hidden">
+      <section className="pt-1 pb-20 md:pt-2 md:pb-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -58,15 +59,16 @@ export default function Admissions() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
+              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-slate-100">
                 <img
-                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
-                  alt="Students preparing application documents"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  src={`${import.meta.env.BASE_URL}admissions-students.png`}
+                  alt="Students completing admission registration at Government Degree College Hayatabad"
+                  className="w-full h-full object-cover object-center"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[2rem] shadow-xl border border-slate-100 max-w-xs">
+              <div className="absolute -bottom-10 -left-4 sm:-left-10 bg-white p-8 sm:p-10 rounded-[2rem] shadow-xl border border-slate-100 max-w-xs">
                 <div className="text-4xl font-serif font-bold text-academy-green">HED</div>
                 <div className="text-slate-500 text-xs uppercase tracking-widest font-bold mt-2">
                   Khyber Pakhtunkhwa Higher Education Department online admissions
@@ -218,7 +220,7 @@ export default function Admissions() {
       <section className="py-14 md:py-16 bg-academy-green-dark text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="https://images.unsplash.com/photo-1498243691581-b145c3f32578?auto=format&fit=crop&w=1200&q=80"
+            src={`${import.meta.env.BASE_URL}gch-hero-campus.png`}
             alt=""
             className="w-full h-full object-cover grayscale"
           />

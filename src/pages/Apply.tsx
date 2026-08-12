@@ -1,9 +1,10 @@
 import { motion } from 'motion/react';
 import { ExternalLink, CheckCircle2, MapPin, Phone, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SITE } from '../site';
+import { useSite } from '../context/SiteContext';
 
 export default function Apply() {
+  const SITE = useSite();
   const navigate = useNavigate();
 
   return (
@@ -95,7 +96,7 @@ export default function Apply() {
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-6 py-3 font-bold text-academy-green hover:border-academy-green transition-colors"
             >
-              facebook.com/gcpeshawar01 <ExternalLink size={16} />
+              facebook.com/Govt.DegreeCollegeHayatabad <ExternalLink size={16} />
             </a>
               </div>
             </div>

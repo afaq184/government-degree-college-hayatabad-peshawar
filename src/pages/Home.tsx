@@ -1,56 +1,67 @@
-import { ArrowRight, ExternalLink, Calendar, Award, Users, GraduationCap, Microscope } from 'lucide-react';
+import { ArrowRight, ExternalLink, Award, Users, GraduationCap, Microscope, MapPin, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { INTRO_VIDEO_URL } from '../media';
-import { SITE } from '../site';
-
-/** Campus banner — file lives in `public/hero-campus.jpg` (Vite serves from site root). */
-const heroImage = `${import.meta.env.BASE_URL}hero-campus.jpg`;
-const principalImage = `${import.meta.env.BASE_URL}principal.jpg`;
+import { useSite } from '../context/SiteContext';
 
 export default function Home() {
+  const SITE = useSite();
+  const heroImage = SITE.heroImage || `${import.meta.env.BASE_URL}gch-hero-campus.png`;
+  const principalImage = SITE.principalImage || `${import.meta.env.BASE_URL}principal.png`;
+  const campusGardensImage = `${import.meta.env.BASE_URL}gch-campus-gardens.png`;
+
   return (
     <div className="flex flex-col">
-      <section className="relative flex min-h-[min(72svh,720px)] max-h-[900px] items-start overflow-hidden pb-20 pt-1 md:min-h-[min(78svh,780px)] md:pb-24 md:pt-2">
+      <section className="relative min-h-[min(92svh,880px)] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <motion.img
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.4, ease: 'easeOut' }}
             src={heroImage}
-            alt={`${SITE.shortName} campus - main building with Pakistan flag`}
-            className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center"
+            alt={`${SITE.fullName} campus`}
+            className="absolute inset-0 h-full w-full object-cover object-center"
             loading="eager"
             decoding="async"
             fetchPriority="high"
           />
-          {/* Very light gradient — only left side for text readability, right side fully clear */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#172554]/80 via-[#172554]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/20 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-academy-green-dark via-academy-green-dark/55 to-academy-green-dark/25" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <motion.p
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="absolute top-5 sm:top-6 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-academy-gold-light font-bold tracking-[0.22em] uppercase text-xs sm:text-sm"
+        >
+          Phase 6 · Hayatabad · Peshawar
+        </motion.p>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 pt-28">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="max-w-3xl"
           >
-            <p className="text-academy-gold-light font-bold tracking-widest uppercase text-sm mb-4">
-              Public sector · University of Peshawar affiliation
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
               {SITE.fullName}
             </h1>
-            <p className="text-xl text-slate-200 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/85 mb-10 max-w-2xl leading-relaxed">
               {SITE.tagline}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-secondary flex items-center gap-2 px-10 py-5 text-lg shadow-2xl hover-scale hover-glow">
+              <Link
+                to="/contact"
+                className="btn-secondary inline-flex items-center gap-2 px-8 py-4 text-base shadow-2xl hover-scale hover-glow"
+              >
                 Contact the college
               </Link>
               <a
                 href={SITE.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 backdrop-blur-xl text-white border-2 border-white/40 px-10 py-5 rounded-md font-bold flex items-center gap-2 hover:bg-white/20 transition-all shadow-2xl hover-scale"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-md font-bold text-white border-2 border-white/40 bg-white/10 backdrop-blur-xl hover:bg-white/20 transition-all shadow-2xl hover-scale"
               >
                 <ExternalLink size={20} />
                 Facebook updates
@@ -60,47 +71,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-20 -mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="bg-white rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x border border-slate-100 overflow-hidden">
-          <div className="p-10 text-center hover:bg-slate-50 transition-colors group cursor-default">
-            <div className="text-4xl font-serif font-bold text-academy-green mb-2 group-hover:scale-110 transition-transform duration-300">
-              Since {SITE.established}
+      <section className="py-12 md:py-14 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-4">
+          {[
+            { label: 'Established', value: String(SITE.established) },
+            { label: 'Programmes', value: 'FSc · FA · BS' },
+            { label: 'Campus', value: '35 Kanals' },
+          ].map((item) => (
+            <div key={item.label} className="text-center sm:text-left sm:px-6 sm:border-r sm:last:border-0 border-slate-100">
+              <div className="text-3xl md:text-4xl font-serif font-bold text-academy-green">{item.value}</div>
+              <div className="text-slate-500 text-sm uppercase tracking-wider font-medium mt-1">{item.label}</div>
             </div>
-            <div className="text-slate-500 text-sm uppercase tracking-wider font-medium">Years of public service</div>
-          </div>
-          <div className="p-10 text-center hover:bg-slate-50 transition-colors group cursor-default">
-            <div className="text-4xl font-serif font-bold text-academy-green mb-2 group-hover:scale-110 transition-transform duration-300">
-              FSc · FA · BS
-            </div>
-            <div className="text-slate-500 text-sm uppercase tracking-wider font-medium">Science & humanities pathways</div>
-          </div>
-          <div className="p-10 text-center hover:bg-slate-50 transition-colors group cursor-default">
-            <div className="text-4xl font-serif font-bold text-academy-green mb-2 group-hover:scale-110 transition-transform duration-300">
-              Shahi Bagh
-            </div>
-            <div className="text-slate-500 text-sm uppercase tracking-wider font-medium">Adjacent to Arbab Niaz Stadium</div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-14 md:py-16 bg-academy-cream">
+      <section className="py-16 md:py-20 bg-academy-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative mx-auto w-full max-w-md"
             >
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative bg-slate-200">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-slate-200 ring-4 ring-white ring-offset-4 ring-offset-academy-cream">
                 <img
                   src={principalImage}
                   alt={`${SITE.principal}, Principal`}
-                  className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
+                  className="absolute inset-0 h-full w-full object-cover object-[center_12%]"
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-academy-green-dark via-academy-green-dark/75 to-transparent px-6 pb-6 pt-28">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-academy-green-dark via-academy-green-dark/80 to-transparent px-6 pb-6 pt-28">
                   <span className="text-academy-gold-light font-bold tracking-widest uppercase text-xs block mb-2">Principal</span>
                   <p className="text-white font-serif font-bold text-lg sm:text-xl leading-snug">{SITE.principal}</p>
                 </div>
@@ -112,16 +115,19 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-academy-green mb-8 leading-tight">Assalam-o-Alaikum</h2>
               <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
                 <p>
-                  Welcome to {SITE.fullName}. For decades, our college has served students from across Peshawar and Khyber
-                  Pakhtunkhwa with rigorous academics in science and humanities, co-curricular activities, and a campus adjacent to
-                  historic Shahi Bagh and Arbab Niaz Stadium.
+                  Welcome to {SITE.fullName}. Since {SITE.established}, our campus in Phase 6 Hayatabad has served students
+                  with rigorous intermediate and undergraduate teaching, well-equipped laboratories, and a culture of discipline
+                  and character building.
                 </p>
                 <p>
-                  Whether you join us for intermediate, a two-year degree, or a four-year BS programme, our faculty and staff are
-                  committed to helping you grow intellectually and personally. Please follow official announcements on the KP HED
-                  admission portal and our Facebook page.
+                  Whether you join an FSc stream or a BS programme, our faculty and staff are committed to your academic growth.
+                  Confirm admissions and notices on the KP HED portal and our{' '}
+                  <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className="text-academy-green font-semibold underline-offset-2 hover:underline">
+                    Facebook page
+                  </a>
+                  .
                 </p>
-                <div className="pt-8">
+                <div className="pt-6">
                   <p className="font-serif font-bold text-academy-green text-xl">{SITE.principal}</p>
                   <p className="text-slate-500 italic">Principal, {SITE.shortName}</p>
                 </div>
@@ -138,7 +144,7 @@ export default function Home() {
               <span className="text-academy-gold font-bold tracking-widest uppercase text-sm mb-2 block">College life</span>
               <h2 className="text-4xl font-bold text-academy-green">Highlights & events</h2>
               <p className="text-slate-500 mt-2 max-w-2xl">
-                Dates below are illustrative; confirm schedules on the college Facebook page and college notice boards.
+                Watch the college introduction video, then confirm schedules on the Facebook page and notice boards.
               </p>
             </div>
             <a
@@ -164,7 +170,7 @@ export default function Home() {
               </video>
               <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-2/5 bg-gradient-to-b from-black/60 to-transparent" />
               <div className="pointer-events-none absolute bottom-14 left-0 z-10 max-w-xl p-8 sm:p-10">
-                <span className="bg-academy-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                <span className="bg-academy-gold text-academy-green-dark text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
                   College introduction
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-academy-gold-light transition-colors">
@@ -198,28 +204,75 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-14 md:py-16 bg-slate-50">
+      <section className="py-16 md:py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-academy-green mb-4">Why students choose {SITE.shortName}</h2>
-          <p className="text-slate-500 mb-12 max-w-3xl">
-            Established in {SITE.established} near the historic Shahi Bagh, the college
-            is widely recognised across Peshawar for intermediate streams and its expanding BS offerings.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-academy-gold font-bold tracking-widest uppercase text-sm mb-3 block">Campus</span>
+              <h2 className="text-4xl font-bold text-academy-green mb-5">Gardens, labs & learning spaces</h2>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                The college building spans about 35 kanals with ventilated classrooms, laboratories, a library with reading room,
+                a spacious hall, and landscaped lawns at the heart of Hayatabad.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/gallery" className="btn-primary inline-flex items-center gap-2">
+                  View gallery <ArrowRight size={18} />
+                </Link>
+                <a
+                  href={SITE.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-bold text-academy-green hover:text-academy-green-dark"
+                >
+                  <ExternalLink size={18} /> Facebook updates
+                </a>
+              </div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-[16/11] overflow-hidden rounded-2xl shadow-xl"
+            >
+              <img
+                src={campusGardensImage}
+                alt="Aerial view of Government Degree College Hayatabad campus gardens and building"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-academy-green-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div>
+              <span className="text-academy-gold-light font-bold tracking-widest uppercase text-sm mb-3 block">Why choose us</span>
+              <h2 className="text-3xl md:text-4xl font-bold">Why students choose {SITE.shortName}</h2>
+            </div>
+            <p className="text-white/70 max-w-md flex items-start gap-2">
+              <MapPin size={18} className="shrink-0 mt-1 text-academy-gold-light" />
+              {SITE.addressLine}, {SITE.city}
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: 'Strong science streams',
-                desc: 'FSc Pre-Medical, Pre-Engineering, and Computer Science alongside FA programmes.',
+                desc: 'FSc Pre-Medical, Pre-Engineering, and Computer Science alongside FA Humanities.',
                 icon: <Microscope />,
               },
               {
                 title: 'University pathways',
-                desc: 'Degree and BS programmes aligned with University of Peshawar regulations.',
+                desc: 'BS programmes aligned with University of Peshawar regulations.',
                 icon: <GraduationCap />,
               },
               {
                 title: 'Dedicated faculty',
-                desc: 'Departments across physical sciences, biological sciences, and social sciences & humanities.',
+                desc: 'Departments across physical sciences, biological sciences, and humanities.',
                 icon: <Users />,
               },
               {
@@ -227,16 +280,11 @@ export default function Home() {
                 desc: 'Affordable access to quality higher secondary and undergraduate education in KP.',
                 icon: <Award />,
               },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover-lift hover-glow group cursor-default"
-              >
-                <div className="text-academy-gold mb-6 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-academy-green mb-3 group-hover:text-academy-gold transition-colors">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+            ].map((item) => (
+              <div key={item.title} className="bg-white/5 border border-white/10 p-7 hover:bg-white/10 transition-colors">
+                <div className="text-academy-gold-light mb-5">{item.icon}</div>
+                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

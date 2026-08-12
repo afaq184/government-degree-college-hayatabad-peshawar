@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface LogoProps {
   /** Extra Tailwind classes (e.g. rounded-full). */
   className?: string;
@@ -7,7 +5,7 @@ interface LogoProps {
   size?: number;
 }
 
-const logoSrc = `${import.meta.env.BASE_URL}gcp-logo.png`;
+const logoSrc = `${import.meta.env.BASE_URL}gch-logo.png`;
 
 export default function Logo({ className = '', size = 40 }: LogoProps) {
   return (
@@ -15,7 +13,7 @@ export default function Logo({ className = '', size = 40 }: LogoProps) {
       src={logoSrc}
       width={size}
       height={size}
-      alt="Government College Peshawar"
+      alt="Government Degree College Hayatabad"
       className={`object-contain select-none shrink-0 ${className}`}
       decoding="async"
     />

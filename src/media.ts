@@ -1,2 +1,2 @@
 export const INTRO_VIDEO_URL =
-  'https://res.cloudinary.com/dxoigpt5j/video/upload/q_auto/f_auto/v1781958519/intro_video_of_gcp_nib0q7.mp4';
+  'https://res.cloudinary.com/dxoigpt5j/video/upload/v1786482065/snaptik-7662025931543825684-v3_AD6kzh9t_1_ti8rsy.mp4';
