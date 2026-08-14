@@ -25,6 +25,10 @@ export interface FacultyMember {
 
 const baseUrl = import.meta.env.BASE_URL || '/';
 
+function facultyPhoto(fileName: string): string {
+  return encodeURI(`${baseUrl}faculty/faculty pic/${fileName}`);
+}
+
 export const DEPARTMENTS: Department[] = [
   {
     id: 'computer-science',
@@ -55,6 +59,13 @@ export const DEPARTMENTS: Department[] = [
     programs: ['BS Chemistry (4 Years)', 'Associate Degree (2 Years)', 'FSc Pre-Medical (2 Years)']
   },
   {
+    id: 'statistics',
+    name: 'Statistics Department',
+    facultyCategory: 'Physical Sciences',
+    overview: 'The Department of Statistics develops quantitative reasoning and data analysis skills. Students learn probability, inferential statistics, and applied methods used in research, public administration, and the social and natural sciences.',
+    programs: ['BS Statistics (4 Years)', 'FA / FSc Statistics (2 Years)']
+  },
+  {
     id: 'botany',
     name: 'Botany Department',
     facultyCategory: 'Biological Sciences',
@@ -67,6 +78,13 @@ export const DEPARTMENTS: Department[] = [
     facultyCategory: 'Biological Sciences',
     overview: 'The Department of Zoology focuses on animal biology, physiology, genetics, evolution, and ecology. Students gain hands-on experience through advanced laboratory investigations, microscope studies, and local ecological field trips.',
     programs: ['BS Zoology (4 Years)', 'FSc Pre-Medical (2 Years)']
+  },
+  {
+    id: 'health-physical-education',
+    name: 'Health & Physical Education Department',
+    facultyCategory: 'Biological Sciences',
+    overview: 'The Department of Health and Physical Education promotes lifelong wellness, sports science, and physical fitness. Instruction combines exercise science, pedagogy, and practical training to support student health and athletic development.',
+    programs: ['Health & Physical Education (Intermediate)', 'College Sports & Fitness Programmes']
   },
   {
     id: 'english',
@@ -88,6 +106,13 @@ export const DEPARTMENTS: Department[] = [
     facultyCategory: 'Social Sciences & Humanities',
     overview: 'The Department of Urdu promotes the national language, culture, and heritage, offering deep insights into Urdu poetry, prose, classical texts, and contemporary literary criticism.',
     programs: ['BS Urdu (4 Years)', 'FA Humanities (2 Years)']
+  },
+  {
+    id: 'islamic-studies',
+    name: 'Islamic Studies Department',
+    facultyCategory: 'Social Sciences & Humanities',
+    overview: 'The Department of Islamic Studies and Islamiyat offers instruction in Islamic education, Arabic-related scholarship, and related humanities. The department supports students in developing a grounded understanding of Islamic thought, ethics, and academic study of religion.',
+    programs: ['Islamic Studies / Islamiyat (Degree & Intermediate)', 'FA Humanities (2 Years)']
   },
   {
     id: 'arabic',
@@ -116,393 +141,632 @@ export const DEPARTMENTS: Department[] = [
     facultyCategory: 'Social Sciences & Humanities',
     overview: 'The Department of Economics introduces economic theories, market analysis, econometrics, and public policy issues. We equip students with analytical tools to assess economic problems at local and global scales.',
     programs: ['BS Economics (4 Years)', 'Associate Degree (2 Years)']
+  },
+  {
+    id: 'additional-faculty',
+    name: 'College Faculty',
+    facultyCategory: 'Social Sciences & Humanities',
+    overview: 'Teaching staff serving Government Degree College Hayatabad whose submitted profile listed Higher Education Department as the parent department and did not name a subject department. Assignments can be updated when the academic department is confirmed.',
+    programs: ['Intermediate and Degree Classes']
+  },
+  {
+    id: 'administration',
+    name: 'College Administration',
+    facultyCategory: 'Support Services',
+    overview: 'The administrative wing coordinates academic sessions, admissions, accounts, pupil fund, and day-to-day college operations under the Principal and DDO. Support staff keep financial records, student services, and official correspondence in order.',
+    programs: ['Principal Office', 'DDO / Accounts', 'Pupil Fund Account', 'Admissions & Student Records']
   }
 ];
 
 export const FACULTY_MEMBERS: FacultyMember[] = [
   // Computer Science
   {
-    id: 'dr-ahmad-khan',
+    id: 'dr-mohammad-tehseen-khan',
     deptId: 'computer-science',
-    name: 'Dr. Ahmad Khan',
-    designation: 'Professor & Chair',
-    specialization: 'Artificial Intelligence & Machine Learning',
-    email: 'ahmad.khan@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Computer Science, University of Peshawar; Postdoc, Linköping University, Sweden',
-    biography: 'Dr. Ahmad Khan has over 18 years of academic and research experience. He has published over 30 research articles in top-tier journals and has spearheaded several governmental IT initiatives in Khyber Pakhtunkhwa. He is passionate about mentoring undergraduate students in AI research.',
-    researchInterests: ['Computer Vision', 'Deep Learning for Medical Imaging', 'Natural Language Processing for Pashto/Urdu'],
-    publications: [
-      'Khan, A., et al. "Deep Learning-based Diagnosis of Retinopathy," IEEE Access, 2024.',
-      'Khan, A. "Pashto Language Modeling using Transformer Networks," Language Resources & Evaluation, 2022.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 102, Science Block A, GDC Hayatabad'
-  },
-  {
-    id: 'dr-kamran-ali',
-    deptId: 'computer-science',
-    name: 'Kamran Ali',
+    name: 'Dr. Mohammad Tehseen Khan',
     designation: 'Associate Professor',
-    specialization: 'Software Engineering & Cloud Computing',
-    email: 'kamran.ali@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Software Engineering, NUST Islamabad',
-    biography: 'Kamran Ali joined GDC Hayatabad in 2018. His work focuses on cloud resource optimization and agile software methodologies. He coordinates the final year project defenses and industry internship programs for BS Computer Science.',
-    researchInterests: ['Agile Methodologies', 'Cloud Architecture Optimization', 'IoT Systems Security'],
-    publications: [
-      'Ali, K. "A Framework for Microservice Migration in Cloud Environments," Journal of Systems and Software, 2023.',
-      'Ali, K. "Securing Edge Devices in IoT Smart Campus Architectures," IEEE Internet of Things Journal, 2021.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 105, Science Block A, GDC Hayatabad'
+    specialization: 'Artificial Intelligence & Machine Learning',
+    email: 'for.tehseen.khan@gmail.com',
+    photo: facultyPhoto('Muhammad Tehseen.jpg'),
+    qualification: 'PhD in Computer Science (Machine Learning / AI), University of Peshawar',
+    biography: 'Dr. Mohammad Tehseen Khan completed his doctorate in AI (Machine Learning) from the University of Peshawar. He is serving as Associate Professor at GDC Boys Hayatabad. He has 6 international journal publications with an impact factor of more than 13.',
+    researchInterests: ['Cyber Security', 'Machine Learning', 'Artificial Intelligence', 'Bio Sensor Networks', 'Network Security'],
+    publications: ['5 journal publications and 1 book chapter (impact factor more than 13).'],
+    contactInfo: 'IT Block, GDC Boys Hayatabad'
   },
   {
-    id: 'prof-usman-shah',
+    id: 'sikandar-azam',
     deptId: 'computer-science',
-    name: 'Usman Shah',
-    designation: 'Assistant Professor',
-    specialization: 'Data Science & Databases',
-    email: 'usman.shah@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.S. in Computer Science, FAST-NUCES Peshawar',
-    biography: 'Usman Shah has been teaching database design and data structures at GDC Hayatabad since 2015. He represents the department in the college sports board and coordinates computing lab upgrades.',
-    researchInterests: ['Big Data Analytics', 'Distributed Systems', 'Relational Database Performance'],
-    publications: [
-      'Shah, U. "Optimizing Query Execution in Distributed NoSQL Systems," Journal of Big Data, 2022.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    linkedin: 'https://linkedin.com/',
-    contactInfo: 'Lab Coordinator Office, Main IT Lab, GDC Hayatabad'
+    name: 'Sikandar Azam',
+    designation: 'Associate Professor',
+    specialization: 'Computer Networks',
+    email: 'sikandardawar@gmail.com',
+    photo: facultyPhoto('sikandar azam.jpg'),
+    qualification: 'MS-CS',
+    biography: 'Sikandar Azam is Associate Professor of Computer Science at Government Degree College, Hayatabad. He is serving in BPS-19 and has extensive experience in teaching, academic activities, and departmental responsibilities. He is passionate about education, technology, and helping students develop their knowledge and skills.',
+    researchInterests: ['Computer Networks'],
+    publications: [],
+    contactInfo: 'Hayatabad, Peshawar'
   },
+  {
+    id: 'jawad-akhtar',
+    deptId: 'computer-science',
+    name: 'Jawad Akhtar',
+    designation: 'Assistant Professor',
+    specialization: 'Computer Science',
+    email: 'jawadakhtar83@gmail.com',
+    photo: facultyPhoto('jawad akhtar.png'),
+    qualification: 'MS (Computer Science), COMSATS University Islamabad (2009)',
+    biography: 'Jawad Akhtar completed his MS-CS degree from COMSATS University Islamabad in 2009 and has been working in the Higher Education Department since then.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'IT Block, GDC Hayatabad'
+  },
+  {
+    id: 'dr-zafar-khan-khalil',
+    deptId: 'computer-science',
+    name: 'Dr. Zafar Khan Khalil',
+    designation: 'Lecturer in Computer Science',
+    specialization: 'Computer Vision & Deep Learning',
+    email: 'zafar.khalil88@gmail.com',
+    photo: facultyPhoto('Dr. Zafar Khan Khalil.png'),
+    qualification: 'Ph.D. Computer Science',
+    biography: 'Dr. Zafar Khan Khalil is a Computer Science and AI professional with a strong background in teaching and research. His special interests include deep learning, computer vision, image processing, IoT, and medical images.',
+    researchInterests: ['Computer Vision', 'Image Processing', 'Machine Learning', 'Deep Learning'],
+    publications: ['A comprehensive dataset of Infant Facial Expressions of Pain Intensity'],
+    googleScholar: 'https://scholar.google.com/citations?user=RvLkP9UAAAAJ&hl=en',
+    contactInfo: 'Department of Computer Science, GDC Hayatabad'
+  },
+  {
+    id: 'ameer-mustafa',
+    deptId: 'computer-science',
+    name: 'Ameer Mustafa',
+    designation: 'Lecturer (BPS-17)',
+    specialization: 'Computer Science',
+    email: 'ameer983465@gmail.com',
+    photo: facultyPhoto('Ameer mustafa.jpg'),
+    qualification: 'MSc in Computer Science, University of Peshawar (2022)',
+    biography: 'Ameer Mustafa belongs to District Peshawar, Khyber Pakhtunkhwa. He completed his Master in Computer Science from the University of Peshawar in 2022 and is working in the Higher Education Department as Lecturer.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'Hayatabad, Peshawar'
+  },
+
   // Mathematics
   {
-    id: 'prof-tariq-mahmood',
+    id: 'dr-mohammad-ishaq',
     deptId: 'mathematics',
-    name: 'Prof. Tariq Mahmood',
-    designation: 'Professor & Head',
-    specialization: 'Pure Mathematics & Algebra',
-    email: 'tariq.mahmood@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.Phil. in Mathematics, University of Peshawar',
-    biography: 'Prof. Tariq Mahmood is one of the most senior faculty members at Government Degree College Hayatabad, with over 25 years of teaching service. He has authored multiple board text books in algebra and calculus.',
-    researchInterests: ['Group Theory', 'Ring Theory', 'Mathematical Pedagogy'],
-    publications: [
-      'Mahmood, T. "On Finite Groups and Homology Relations," Peshawar Journal of Mathematics, 2019.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Room 201, Science Block B, GDC Hayatabad'
+    name: 'Dr. Mohammad Ishaq',
+    designation: 'Assistant Professor',
+    specialization: 'Fluid Mechanics & Graph Theory',
+    email: 'mohammadishaq117@gmail.com',
+    photo: facultyPhoto('Dr.Mohammad Ishaq.jpeg'),
+    qualification: 'Ph.D. in Mathematics, Islamia College University, Peshawar',
+    biography: 'Dr. Mohammad Ishaq is Assistant Professor in Mathematics with a Ph.D. in Mathematics from Islamia College University, Peshawar. He has more than 20 years of teaching and research experience, specializing in fluid mechanics and graph theory. He has published more than 20 research articles in national and international journals. He currently serves at Government Degree College, Hayatabad, where he is actively involved in teaching, research, and academic administration.',
+    researchInterests: ['Applied Mathematics', 'Pure Mathematics'],
+    publications: ['More than 20 publications in different fields of Mathematics'],
+    contactInfo: 'Govt. Degree College Hayatabad, Phase-6, Peshawar'
   },
   {
-    id: 'dr-asad-rehman',
+    id: 'dr-abdul-hameed',
     deptId: 'mathematics',
-    name: 'Asad Rehman',
+    name: 'Dr. Abdul Hameed',
     designation: 'Assistant Professor',
-    specialization: 'Applied Mathematics & Fluid Dynamics',
-    email: 'asad.rehman@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Applied Mathematics, QAU Islamabad',
-    biography: 'Asad Rehman researches mathematical modeling of fluid flows. He coordinates semester system schedules and exam evaluations for the Mathematics department.',
-    researchInterests: ['Computational Fluid Dynamics', 'Differential Equations', 'Numerical Methods'],
+    specialization: 'Graph Theory & Linear Algebra',
+    email: 'hameedafr@gmail.com',
+    photo: facultyPhoto('Dr. Abdul Hameed.jpeg'),
+    qualification: 'PhD Mathematics, Shanghai Jiao Tong University, China; M.Ed.',
+    biography: 'Dr. Abdul Hameed is Assistant Professor of Mathematics at Government Degree College, Hayatabad, Peshawar. He holds a PhD in Mathematics from Shanghai Jiao Tong University, China. He teaches mathematics courses at both intermediate and BS levels. His research interests include graph theory, spectral graph theory, linear algebra, and matrix theory.',
+    researchInterests: ['Graph Theory', 'Linear Algebra', 'Matrix Theory'],
     publications: [
-      'Rehman, A. "Numerical Study of Boundary Layer Flows over Stretching Sheets," Physics of Fluids, 2023.'
+      'Hameed, A., Khan, Z. U., and Tyaglov, M. Laplacian energy and first Zagreb Index of Laplacian integral graphs, Analele Stiintifice ale Universitatii Ovidius din Constanta, Mathematical Series, 30 (2022), no. 2, 133–160.',
+      'Hameed, A., and Tyaglov, M. Integral Laplacian graphs with a unique repeated Laplacian eigenvalue, I, Special Matrices, 11 (2023), no. 2, 20230111.',
+      'Hameed, A., and Tyaglov, M. Integral Laplacian graphs with a unique repeated Laplacian eigenvalue, II, Bulletin of the Korean Mathematical Society, (2025), 299–317.',
+      'Khan, Z. U., Hameed, A., and Ijaz, M. On Degree Distance spectra of graphs, Contributions to Discrete Mathematics, 21 (2025), no. 1.',
+      'Khan, Z. U., and Hameed, A. On the spectral radius and energy of the degree distance matrix of a connected graph, Open Mathematics, 23 (2025), no. 4, 20250139.',
+      'Hameed, A., Rehman, M. U., and Boulaaras, S. Study of piecewise global fractional financial model with three state variables, Fractals, 33 (2025), no. 4, 2540073.',
+      'Hameed, A., and Khan, Z. U. Note on generalized distance matrix of graphs, Thai Journal of Mathematics, 20 (2022), no. 4, 1505–1518.',
+      'Khan, Z. U., Hameed, A., Ali, G., and Baig, A. Q. 5-Cyclic Graphs with Minimum Degree Distance, Natural Publishing, (In press).'
     ],
-    googleScholar: 'https://scholar.google.com/',
-    linkedin: 'https://linkedin.com/',
-    contactInfo: 'Room 203, Science Block B, GDC Hayatabad'
+    googleScholar: 'https://scholar.google.com/citations?hl=en&user=jUcntwUAAAAJ',
+    linkedin: 'https://www.linkedin.com/in/dr-abdul-hameed-72a27214a/',
+    contactInfo: 'Government Degree College, Hayatabad Peshawar'
   },
+  {
+    id: 'nadeem-khan',
+    deptId: 'mathematics',
+    name: 'Nadeem Khan',
+    designation: 'Assistant Professor',
+    specialization: 'Mathematics',
+    email: 'nadeemgcp@gmail.com',
+    photo: '',
+    qualification: 'MPhil Mathematics',
+    biography: 'Nadeem Khan is Assistant Professor of Mathematics with an MPhil in Mathematics and around 15 years of teaching experience.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'GDC Hayatabad, Peshawar'
+  },
+  {
+    id: 'abdul-majeed',
+    deptId: 'mathematics',
+    name: 'Abdul Majeed',
+    designation: 'Lecturer in Mathematics (BPS-17)',
+    specialization: 'Fluid Mechanics',
+    email: 'abdulmajeed.kundi@gmail.com',
+    photo: facultyPhoto('Abdul Majeed.jpg'),
+    biography: 'Abdul Majeed is Lecturer in Mathematics. His qualification is M.Phil Mathematics, and his research interest is Ph.D. research in fluid mechanics.',
+    researchInterests: ['Fluid Mechanics'],
+    publications: [],
+    contactInfo: 'GDC Hayatabad'
+  },
+  {
+    id: 'malik-aizaz-ali',
+    deptId: 'mathematics',
+    name: 'Malik Aizaz Ali',
+    designation: 'Lecturer',
+    specialization: 'Mathematics',
+    email: 'malikaizazali@gmail.com',
+    photo: facultyPhoto('Malik Aizaz Ali.jpg'),
+    qualification: 'MPhil (Mathematics), B.Ed., M.Ed.',
+    biography: 'Malik Aizaz Ali completed his MPhil in Mathematics from the University of Peshawar. He is currently working as Lecturer at Govt. Degree College Hayatabad Peshawar and is passionate about learning and teaching.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'Department of Mathematics, GDC Hayatabad Peshawar'
+  },
+
   // Physics
   {
-    id: 'dr-bilal-ahmed',
+    id: 'himayat-ullah',
     deptId: 'physics',
-    name: 'Dr. Bilal Ahmed',
-    designation: 'Professor & Head',
-    specialization: 'Quantum Physics',
-    email: 'bilal.ahmed@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Physics, University of Punjab',
-    biography: 'Dr. Bilal Ahmed directs the physical sciences laboratory and has over 20 years of research experience in quantum information theory and lasers.',
-    researchInterests: ['Quantum Decoherence', 'Optoelectronics', 'Laser Spectroscopy'],
+    name: 'Himayat Ullah',
+    designation: 'Lecturer in Physics & Head of Department (HOD)',
+    specialization: 'Materials Science',
+    email: 'himayatkhan666@gmail.com',
+    photo: facultyPhoto('Himayat Ullah.jpg'),
+    qualification: 'MPhil Physics (Materials Science)',
+    biography: 'Himayat Ullah is a Physics Lecturer and researcher specializing in Materials Science and functional materials. He holds an MPhil in Physics (Materials Science) and has several years of teaching and research experience. His research interests include piezoelectric, dielectric, ferroelectric, and energy-storage materials, with a focus on their advanced functional applications. He has authored research publications in the fields of materials science, engineering, and functional materials.',
+    researchInterests: ['Materials Science', 'Polymers', 'Ceramics', 'Mechatronics and Control Engineering'],
     publications: [
-      'Ahmed, B. "Decoherence Control in Multi-qubit Systems," Physical Review A, 2022.'
+      'Advancements in Piezoelectric Nanomaterials for Wearable Sensor Applications — Spectrum of Engineering Sciences, 2026.',
+      'Advanced Characterization of Hierarchical Porous Carbon Electrodes for Supercapacitor Applications — Spectrum of Engineering Sciences, 2026.'
     ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Physics Lab Director Office, Ground Floor, GDC Hayatabad'
+    linkedin: 'https://www.linkedin.com/in/himayat-ullah-8a59a9367',
+    contactInfo: 'GDC Hayatabad Peshawar for Boys'
   },
   {
-    id: 'prof-naeem-yousaf',
+    id: 'dr-qaisar-hayat',
     deptId: 'physics',
-    name: 'Naeem Yousaf',
+    name: 'Dr. Qaisar Hayat',
     designation: 'Assistant Professor',
-    specialization: 'Solid State Physics',
-    email: 'naeem.yousaf@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.Phil. in Physics, Peshawar University',
-    biography: 'Naeem Yousaf manages the physics equipment repository and coordinates practical board exams for intermediate students.',
-    researchInterests: ['Semiconductor Nanostructures', 'Thin Film Materials'],
-    publications: [
-      'Yousaf, N. "Structural Characterization of ZnO Thin Films," Materials Letters, 2021.'
-    ],
-    contactInfo: 'Main Physics Lab, GDC Hayatabad'
+    specialization: 'Plasmonics & Terahertz Photonics',
+    email: 'qaisarqh@gmail.com',
+    photo: facultyPhoto('Dr Qaisar Hayat.jpg'),
+    qualification: 'PhD Physics (Electronic Engineering), Shanghai Jiao Tong University, China',
+    biography: 'Dr. Qaisar Hayat recently completed his PhD in plasmonic-based nanoantenna arrays with a major in Physics (electronic engineering) from Shanghai Jiao Tong University, Shanghai, P. R. China, a 36th QS-ranked university in the world. His research focused on the construction of plasmonic-based active nanoantenna arrays to enhance optical characteristics for applications in label-free wearable biosensors for rapid detection, terahertz communication, and terahertz photonics.',
+    researchInterests: ['Label-free wearable biosensors for rapid detection', 'Plasmonics', 'Terahertz photonics'],
+    publications: [],
+    googleScholar: 'https://sites.google.com/view/qhayat',
+    linkedin: 'https://www.linkedin.com/in/qaisar-hayat-835333153',
+    contactInfo: 'Government Degree College Hayatabad Peshawar'
   },
+  {
+    id: 'omar-farooq',
+    deptId: 'physics',
+    name: 'Omar Farooq',
+    designation: 'Lecturer',
+    specialization: 'Physics',
+    email: 'phy1.gdch@gmail.com',
+    photo: facultyPhoto('OMAR FAROOQ.jpg'),
+    qualification: 'M.Phil, Physics',
+    biography: 'Mr. Omar Farooq is a college educator dedicated to making complex STEM concepts accessible through hands-on, inquiry-based learning. With a background in science, he attempts to bridge the gap between theoretical principles and real-world innovation.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'GDC Hayatabad, Peshawar'
+  },
+
   // Chemistry
   {
-    id: 'dr-haroon-rasheed',
+    id: 'syed-mahfooz-jan',
     deptId: 'chemistry',
-    name: 'Dr. Haroon Rasheed',
-    designation: 'Professor & Chair',
-    specialization: 'Organic Chemistry',
-    email: 'haroon.rasheed@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Chemistry, HEJ Research Institute of Chemistry, Karachi',
-    biography: 'Dr. Haroon Rasheed specializes in natural product isolation and medicinal chemistry. He has successfully patented two herbal extracts for local medicinal use.',
-    researchInterests: ['Natural Product Chemistry', 'Bioactive Compounds Extraction', 'Spectroscopic Analysis'],
-    publications: [
-      'Rasheed, H. "Bioactive Alkaloids from Indigenous Herbs of KP," Phytochemistry, 2023.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Chemistry Wing A, GDC Hayatabad'
-  },
-  {
-    id: 'prof-saeed-farooq',
-    deptId: 'chemistry',
-    name: 'Saeed Farooq',
-    designation: 'Assistant Professor',
-    specialization: 'Physical Chemistry',
-    email: 'saeed.farooq@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'M.Phil. in Chemistry, University of Peshawar',
-    biography: 'Saeed Farooq supervises chemical laboratory safety protocols and teaches chemical thermodynamics to BS students.',
-    researchInterests: ['Chemical Kinetics', 'Photochemistry', 'Adsorption Processes'],
-    publications: [
-      'Farooq, S. "Adsorption Kinetics of Heavy Metals on Clay Minerals," Journal of Hazardous Materials, 2020.'
-    ],
-    contactInfo: 'Chemistry Lab B, GDC Hayatabad'
-  },
-  // Botany
-  {
-    id: 'dr-muhammad-irfan',
-    deptId: 'botany',
-    name: 'Dr. Muhammad Irfan',
-    designation: 'Professor & Head',
-    specialization: 'Plant Ecology & Flora of KP',
-    email: 'irfan.botany@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Plant Ecology, Quaid-i-Azam University, Islamabad',
-    biography: 'Dr. Muhammad Irfan has published extensively on the flora of northern Pakistan and Khyber Pakhtunkhwa. He maintains the college herbarium and guides seasonal flora cataloging field trips.',
-    researchInterests: ['Ethnobotany', 'Biodiversity Cataloging', 'Climate Change Effects on Alpine Plants'],
-    publications: [
-      'Irfan, M. "Ethnobotany of District Peshawar," Pakistan Journal of Botany, 2022.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Botany Dept Office, Block C, GDC Hayatabad'
-  },
-  {
-    id: 'prof-luqman-jamil',
-    deptId: 'botany',
-    name: 'Luqman Jamil',
-    designation: 'Assistant Professor',
-    specialization: 'Plant Physiology',
-    email: 'luqman.jamil@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.Phil. in Botany, University of Peshawar',
-    biography: 'Luqman Jamil oversees botany laboratory courses and advises the student botany society.',
-    researchInterests: ['Salt Stress in Crops', 'Phytohormones'],
+    name: 'Syed Mahfooz Jan',
+    designation: 'Associate Professor',
+    specialization: 'Biochemistry',
+    email: 'mahfoozj@gmail.com',
+    photo: facultyPhoto('Syed Mahfooz Jan.jpg'),
+    qualification: 'M.Sc Chemistry (Biochemistry)',
+    biography: 'Syed Mahfooz Jan holds an M.Sc in Chemistry with specialization in biochemistry and has 26 years of teaching experience.',
+    researchInterests: ['Biochemistry'],
     publications: [],
-    contactInfo: 'Botany Lab 1, GDC Hayatabad'
+    contactInfo: 'GDC Hayatabad, Phase 6, Hayatabad Peshawar'
   },
+  {
+    id: 'faizan-fayaz',
+    deptId: 'chemistry',
+    name: 'Faizan Fayaz',
+    designation: 'Lecturer',
+    specialization: 'Nanotechnology',
+    email: 'faizanfayaz.upesh@gmail.com',
+    photo: facultyPhoto('Faizan Fayaz.jpg'),
+    qualification: 'M.Sc Chemistry',
+    biography: 'Faizan Fayaz is Lecturer in Chemistry (BPS-17) at Government Degree College Hayatabad. His academic work includes nanotechnology and related chemical research.',
+    researchInterests: ['Nanotechnology'],
+    publications: ['Biological Evaluation of Silver Nanoparticles Derived from Sub Fractions of Dodonaea viscosa'],
+    contactInfo: 'GDC Hayatabad, Phase 6'
+  },
+  {
+    id: 'shahid-amin',
+    deptId: 'chemistry',
+    name: 'Shahid Amin',
+    designation: 'Lecturer',
+    specialization: 'Applied Chemistry & Nanomaterials',
+    email: 'shahidaminkhan142@gmail.com',
+    photo: facultyPhoto('shahid amin.jpg'),
+    qualification: 'MPhil in Applied Chemistry, University of Peshawar',
+    biography: 'Shahid Amin holds an MPhil in Applied Chemistry from the University of Peshawar, Khyber Pakhtunkhwa, Pakistan. He has over five years of experience in academia. His expertise includes 2D materials, including MXene and Graphene.',
+    researchInterests: ['Nanotechnology', 'Composite materials'],
+    publications: [],
+    contactInfo: 'GDC Hayatabad'
+  },
+
+  // Statistics
+  {
+    id: 'tariq-hussain',
+    deptId: 'statistics',
+    name: 'Tariq Hussain',
+    designation: 'DDO / Vice Principal / Associate Professor',
+    specialization: 'Statistics',
+    email: 'tariqzhussain@gmail.com',
+    photo: facultyPhoto('Tariq Hussain.png'),
+    qualification: 'M.Phil in Statistics',
+    biography: 'Tariq Hussain belongs to Peshawar. He completed his M.Phil in Statistics and currently serves as DDO / Vice Principal and Associate Professor at Government Degree College Hayatabad, Peshawar.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'GDC Hayatabad, Peshawar'
+  },
+
   // Zoology
   {
-    id: 'dr-khalid-khan',
+    id: 'ubaidullah',
     deptId: 'zoology',
-    name: 'Dr. Khalid Khan',
-    designation: 'Professor & Chair',
-    specialization: 'Entomology & Parasitology',
-    email: 'khalid.zoology@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Zoology, University of Peshawar',
-    biography: 'Dr. Khalid Khan is a recognized authority on vector-borne insect studies in Peshawar valley. He coordinates research seminars in biological sciences.',
-    researchInterests: ['Mosquito vectors control', 'Parasitic diseases modeling'],
-    publications: [
-      'Khan, K. "Seasonal Abundance of Mosquito Species in Peshawar Valley," Acta Tropica, 2021.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Zoology Block, GDC Hayatabad'
+    name: 'Ubaidullah',
+    designation: 'Professor (BPS-20)',
+    specialization: 'Molecular Biology',
+    email: 'surajsunud2002@gmail.com',
+    photo: facultyPhoto('Ubaidullah.jpeg'),
+    qualification: 'PhD Zoology',
+    biography: 'Ubaidullah is Professor (BPS-20) of Zoology with a PhD in Zoology and 24 years of teaching experience. His research work includes molecular biology and related biological studies.',
+    researchInterests: ['Molecular Biology'],
+    publications: ['Bio Monitoring of DNA Damage in Matchstick industry workers from Peshawar, Khyber Pakhtunkhwa, Pakistan'],
+    contactInfo: 'GDC Hayatabad, Phase 6, Peshawar'
   },
   {
-    id: 'prof-zubair-baig',
+    id: 'mohabat-khan',
     deptId: 'zoology',
-    name: 'Zubair Baig',
+    name: 'Mohabat Khan',
     designation: 'Assistant Professor',
-    specialization: 'Molecular Biology',
-    email: 'zubair.zoology@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'M.Phil. in Zoology, Hazara University',
-    biography: 'Zubair Baig teaches molecular genetics and coordinates student practicals in the zoology labs.',
-    researchInterests: ['Genetics', 'Cell Biology'],
+    specialization: 'Genetics (SNP)',
+    email: 'mohabatkhan1@gmail.com',
+    photo: facultyPhoto('Mohabat khan.jpg'),
+    qualification: 'M.Sc, University of Peshawar',
+    biography: 'Mohabat Khan, son of Syed Raheem, was born on 2 January 1987 in Badabar, Peshawar. He completed Matriculation at Badabar Model School, earned F.Sc. from Government Superior Science College, and graduated with an M.Sc. from the University of Peshawar.',
+    researchInterests: ['Genetics (SNP)'],
     publications: [],
-    contactInfo: 'Zoology Lab A, GDC Hayatabad'
+    contactInfo: 'Government Degree College Hayatabad, Peshawar'
   },
+  {
+    id: 'dr-saif-ullah',
+    deptId: 'zoology',
+    name: 'Dr. Saif Ullah',
+    designation: 'Lecturer in Zoology',
+    specialization: 'Zoology, Diabetes & Neuroscience',
+    email: 'saifktk302@gmail.com',
+    photo: facultyPhoto('Dr.Saif ullah.JPG'),
+    qualification: 'PhD Zoology; B.Ed.; M.Ed.',
+    biography: 'Dr. Saif Ullah is a dedicated biology teacher with over 10 years of teaching experience in government and private educational institutions in Pakistan. He holds a PhD in Zoology, along with B.Ed. and M.Ed. qualifications, with a strong foundation in biology education, laboratory instruction, and student-centered learning. He is experienced in delivering engaging lessons, managing classrooms, conducting practical laboratory sessions, and promoting academic excellence.',
+    researchInterests: ['Zoology', 'Diabetes', 'Neuroscience'],
+    publications: ['https://www.jptcp.com/index.php/jptcp/article/view/6535'],
+    linkedin: 'https://www.linkedin.com/in/dr-saif-ullah-40aa37315',
+    contactInfo: 'GDC for Boys Hayatabad'
+  },
+  {
+    id: 'muhammad-sangeen-khan',
+    deptId: 'zoology',
+    name: 'Muhammad Sangeen Khan',
+    designation: 'Lecturer',
+    specialization: 'Environmental Science',
+    email: 'sangeen1990@gmail.com',
+    photo: facultyPhoto('Muhammad Sangeen Khan.jpg'),
+    qualification: 'MS Environmental Science',
+    biography: 'Muhammad Sangeen Khan is an aspiring environmentalist, passionate about environmental protection, sustainability, and conservation. He is interested in understanding environmental challenges and exploring practical, science-based solutions for a healthier and more sustainable future.',
+    researchInterests: ['Environmental protection', 'Sustainability', 'Conservation'],
+    publications: [],
+    contactInfo: 'GDC Hayatabad, Peshawar'
+  },
+  {
+    id: 'muhammad-ishtiaq',
+    deptId: 'zoology',
+    name: 'Muhammad Ishtiaq',
+    designation: 'BS Lecturer',
+    specialization: 'Fisheries',
+    email: 'ishtiaq.zoologist@gmail.com',
+    photo: facultyPhoto('Muhammad Ishtiaq.jpg'),
+    qualification: 'MPhil Zoology',
+    biography: 'Muhammad Ishtiaq is BS Lecturer in Zoology with an MPhil in Zoology. His research interest is fisheries.',
+    researchInterests: ['Fisheries'],
+    publications: [],
+    contactInfo: 'GDC Hayatabad'
+  },
+
+  // Health & Physical Education
+  {
+    id: 'kamran-ahmad',
+    deptId: 'health-physical-education',
+    name: 'Kamran Ahmad',
+    designation: 'Assistant Professor',
+    specialization: 'Exercise Science & Pedagogy',
+    email: 'kamranppr@gmail.com',
+    photo: facultyPhoto('Kamran Ahmad.jpg'),
+    qualification: 'MS Sports Science',
+    biography: 'Kamran Ahmad is Assistant Professor of Health and Physical Education, dedicated to promoting lifelong wellness through evidence-based teaching and mentorship. He has a strong background in exercise science and pedagogy.',
+    researchInterests: ['Exercise science', 'Physical education pedagogy'],
+    publications: [],
+    contactInfo: 'Near Main Hall, GDC Hayatabad'
+  },
+
   // English
   {
-    id: 'prof-imran-qureshi',
+    id: 'abdullah-khan',
     deptId: 'english',
-    name: 'Prof. Imran Qureshi',
-    designation: 'Professor & Head',
-    specialization: 'English Literature & Postcolonial Studies',
-    email: 'imran.qureshi@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'M.A. in English Literature, University of Peshawar',
-    biography: 'Prof. Imran Qureshi has taught English literature and language at GDC Hayatabad since 2002. He serves as the chief editor of the college magazine and mentors the student literary society.',
-    researchInterests: ['Modern English Poetry', 'Postcolonial Pakistani Literature'],
+    name: 'Abdullah Khan',
+    designation: 'Assistant Professor',
+    specialization: 'English',
+    email: 'abd835.ak@gmail.com',
+    photo: facultyPhoto('Abdullah Khan.jpg'),
+    qualification: 'MA English',
+    biography: 'Abdullah Khan is Assistant Professor of English at Government Degree College Hayatabad, Peshawar.',
+    researchInterests: [],
     publications: [],
-    contactInfo: 'English Department Wing, Admin Block, GDC Hayatabad'
+    contactInfo: 'GDC Hayatabad, Peshawar'
   },
   {
-    id: 'dr-mansoor-shafiq',
+    id: 'irfan-ullah',
     deptId: 'english',
-    name: 'Mansoor Shafiq',
+    name: 'Irfan Ullah',
     designation: 'Assistant Professor',
-    specialization: 'Linguistics & Discourse Analysis',
-    email: 'mansoor.shafiq@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Linguistics, BZU Multan',
-    biography: 'Mansoor Shafiq joined the department in 2020. He coordinates communication skills courses across all BS majors and coordinates language laboratory sessions.',
-    researchInterests: ['Sociolinguistics', 'Bilingualism in KP', 'Critical Discourse Analysis'],
-    publications: [
-      'Shafiq, M. "Code-switching patterns among university students in Peshawar," World Englishes, 2023.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    linkedin: 'https://linkedin.com/',
-    contactInfo: 'English Dept Office, Admin Block, GDC Hayatabad'
+    specialization: 'English',
+    email: 'ifnmohmand@gmail.com',
+    photo: facultyPhoto('irfan ullah.JPG'),
+    qualification: 'MA (English), University of Peshawar',
+    biography: 'Irfan Ullah permanently resides in District Peshawar. He completed his Master\'s from the University of Peshawar and has been serving in the Higher Education Department, Khyber Pakhtunkhwa, since 2012.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'Govt. Degree College Hayatabad, Peshawar'
   },
+  {
+    id: 'owais-ahmad',
+    deptId: 'english',
+    name: 'Owais Ahmad',
+    designation: 'Lecturer in English',
+    specialization: 'Linguistics & English Language Teaching',
+    email: 'soulman0011@gmail.com',
+    photo: facultyPhoto('Owais Ahmad.JPG'),
+    qualification: 'MPhil in English',
+    biography: 'Owais Ahmad is Lecturer in English at Government Degree College Hayatabad, Peshawar. He holds an MPhil in English and is engaged in teaching English language and literature at the undergraduate level. His academic interests include Linguistics, Applied Linguistics, and English Language Teaching. He is particularly interested in language learning and effective English language pedagogy.',
+    researchInterests: ['Linguistics', 'English language teaching'],
+    publications: [],
+    contactInfo: 'Government Degree College Hayatabad, Peshawar'
+  },
+  {
+    id: 'aftab-ali',
+    deptId: 'english',
+    name: 'Aftab Ali',
+    designation: 'Lecturer',
+    specialization: 'Contemporary Novel',
+    email: 'aftabgdcwp@gmail.com',
+    photo: facultyPhoto('Aftab Ali.jpg'),
+    qualification: 'M.Phil English',
+    biography: 'Aftab Ali is a teacher by passion and profession, and a learner by temperament. He always tries to make his classroom a space where knowledge and ideas are exchanged, not merely taught, and aims to impart the best to his students.',
+    researchInterests: ['Contemporary Novel'],
+    publications: [],
+    linkedin: 'https://www.linkedin.com/in/aftab-ali-1ab0a7349',
+    contactInfo: 'Government Degree College Hayatabad, Peshawar'
+  },
+
   // Political Science
   {
-    id: 'dr-sajid-ali',
+    id: 'dr-muhammad-adeel-khan',
     deptId: 'political-science',
-    name: 'Dr. Sajid Ali',
-    designation: 'Professor & Chair',
-    specialization: 'Comparative Politics & Governance',
-    email: 'sajid.ps@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Political Science, University of Peshawar',
-    biography: 'Dr. Sajid Ali is an expert on constitutional governance and public policy systems in South Asia. He organizes annual student model parliaments.',
-    researchInterests: ['Federalism in Pakistan', 'Local Government Systems'],
-    publications: [
-      'Ali, S. "Federalism and the 18th Amendment: A Ten Year Review," Pakistan Horizon, 2022.'
-    ],
-    googleScholar: 'https://scholar.google.com/',
-    contactInfo: 'Room 301, Humanities Block, GDC Hayatabad'
+    name: 'Dr. Muhammad Adeel Khan',
+    designation: 'Lecturer (BPS-17)',
+    specialization: 'Governance & Foreign Policy',
+    email: 'dradeelkhan2@gmail.com',
+    photo: facultyPhoto('Dr. Muhammad Adeel khan.jpg'),
+    qualification: 'Ph.D. in Political Science',
+    biography: 'Dr. Muhammad Adeel Khan holds a PhD in Political Science and serves as Lecturer in the Higher Education Department. His academic interests focus on governance, decision-making, and both domestic and international actors and organizations. He is passionate about translating this knowledge to students to foster critical understanding of political systems and global affairs.',
+    researchInterests: ['Civil-military relationship', 'Decision-making processes', 'Foreign policy'],
+    publications: ['9 publications in HEC-recognized journals'],
+    contactInfo: 'Hayatabad, Peshawar'
   },
   {
-    id: 'prof-farhan-baig',
+    id: 'muhammad-amir-khan',
     deptId: 'political-science',
-    name: 'Farhan Baig',
-    designation: 'Assistant Professor',
-    specialization: 'International Relations',
-    email: 'farhan.ps@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'M.Phil. in International Relations, Quaid-i-Azam University',
-    biography: 'Farhan Baig conducts courses on foreign policy and international organizations. He advises the college debating society.',
-    researchInterests: ['CPEC and Regional Security', 'Foreign Policy of Pakistan'],
+    name: 'Muhammad Amir Khan',
+    designation: 'Lecturer',
+    specialization: 'Political Science',
+    email: 'amirlc133@gmail.com',
+    photo: facultyPhoto('Muhammad Amir khan.jpeg'),
+    qualification: 'MA Political Science',
+    biography: 'Muhammad Amir Khan is a scholar of political science serving as Lecturer at Hayatabad Degree College, Phase-6.',
+    researchInterests: [],
     publications: [],
-    contactInfo: 'Room 303, Humanities Block, GDC Hayatabad'
+    contactInfo: 'Hayatabad Degree College, Phase-6'
   },
+  {
+    id: 'babar-khurshid',
+    deptId: 'political-science',
+    name: 'Babar Khurshid',
+    designation: 'Lecturer (BPS-17)',
+    specialization: 'Governance, Justice & Pashtun Society',
+    email: 'babarkhurshid92@gmail.com',
+    photo: facultyPhoto('Babar khurshid.jpg'),
+    qualification: 'MPhil Political Science, University of Peshawar',
+    biography: 'Babar Khurshid belongs to District Lakki Marwat. After high school education in the same district, he moved to Peshawar and completed BS Political Science from the Department of Political Science, University of Peshawar. From the same department he completed an MPhil with specialization in governance and justice, and anthropology of justice and law in Pashtun society. He is currently working as Lecturer in the Higher Education Department, Khyber Pakhtunkhwa.',
+    researchInterests: ['Governance and justice', 'Anthropology of justice and law', 'Indigenous justice systems', 'Justice in Pashtun society', 'Mineral and energy justice'],
+    publications: [],
+    linkedin: 'https://pk.linkedin.com/in/babar-khurshid-875267409',
+    contactInfo: 'Government Degree College Hayatabad, Phase 6, Peshawar'
+  },
+  {
+    id: 'kashif-mehmood',
+    deptId: 'political-science',
+    name: 'Kashif Mehmood',
+    designation: 'Lecturer',
+    specialization: 'International Relations',
+    email: 'kashifwazir529@gmail.com',
+    photo: facultyPhoto('Kashif Mehmood.jpg'),
+    qualification: 'M.Sc International Relations',
+    biography: 'Kashif Mehmood is presently working as Lecturer in the Political Science Department at GDC Hayatabad, Peshawar.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'Hayatabad, Phase 6'
+  },
+
   // Urdu
   {
-    id: 'dr-abdul-latif',
+    id: 'dr-muhammad-rasheed',
     deptId: 'urdu',
-    name: 'Dr. Abdul Latif',
-    designation: 'Professor & Head',
-    specialization: 'Urdu Prose & Literary History',
-    email: 'latif.urdu@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Urdu Literature, University of Peshawar',
-    biography: 'Dr. Abdul Latif has authored three books on the history of Urdu fiction in the frontier region. He coordinates poetry symposia (Mushairas) at the college.',
-    researchInterests: ['Classic Urdu Fiction', 'Iqbaliyat', 'Literary Criticism'],
+    name: 'Dr. Muhammad Rasheed',
+    designation: 'Associate Professor',
+    specialization: 'Urdu Literature & Critical Theory',
+    email: 'rasheedjan53@gmail.com',
+    photo: facultyPhoto('Dr Muhammad Rasheed.jpg'),
+    qualification: 'PhD Urdu',
+    biography: 'Dr. Muhammad Rasheed is a PhD in Urdu, researcher, and educator. He is passionate about classical and modern Urdu literature, linguistic evolution, and critical theory.',
+    researchInterests: ['Classical and modern Urdu literature', 'Linguistic evolution', 'Critical theory'],
     publications: [
-      'Latif, A. "Historical Evolution of Urdu Novel in KP," Daryaft, 2021.'
+      'خیبر پختونخوا میں اُردو افسانہ',
+      'خیبر پختونخوا کے جنوبی اضلاع کے افسانہ نگار'
     ],
-    contactInfo: 'Urdu Office, Humanities Block, GDC Hayatabad'
+    contactInfo: 'GDC Hayatabad'
   },
   {
-    id: 'prof-arman-malik',
+    id: 'muhammad-adil',
     deptId: 'urdu',
-    name: 'Arman Malik',
-    designation: 'Assistant Professor',
-    specialization: 'Urdu Poetry',
-    email: 'arman.urdu@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.Phil. in Urdu literature, Peshawar University',
-    biography: 'Arman Malik teaches classical ghazal history and coordinates drama productions for the student arts society.',
-    researchInterests: ['Classical Urdu Ghazal', 'Modern Progressive Poetry'],
+    name: 'Muhammad Adil',
+    designation: 'Lecturer',
+    specialization: 'Urdu Language & Literature',
+    email: 'madiljan1993@gmail.com',
+    photo: facultyPhoto('Muhammad Adil.jpg'),
+    qualification: 'M.A Urdu',
+    biography: 'Muhammad Adil is Urdu Lecturer (BPS-17) and a passionate educator dedicated to teaching, learning, and continuous professional growth. He has a strong interest in Urdu language and literature, modern teaching methodologies, SLO-based education, and educational technology. He values honesty, professionalism, knowledge, and lifelong learning.',
+    researchInterests: ['Urdu language and literature', 'SLO-based education', 'Educational technology'],
     publications: [],
-    contactInfo: 'Urdu Dept Room 12, GDC Hayatabad'
+    contactInfo: 'Govt. Degree College Hayatabad, Peshawar'
   },
-  // Arabic
   {
-    id: 'dr-hafiz-rehman',
-    deptId: 'arabic',
-    name: 'Dr. Hafiz Ur Rehman',
-    designation: 'Professor & Head',
-    specialization: 'Arabic Grammar & Linguistics',
-    email: 'hafiz.arabic@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'Ph.D. in Arabic, University of Peshawar',
-    biography: 'Dr. Hafiz Ur Rehman teaches classical Arabic morphology, rhetoric, and literature. He conducts specialized workshops in Arabic calligraphy.',
-    researchInterests: ['Quranic Linguistics', 'Classical Arabic Poetry'],
-    publications: [
-      'Rehman, H. "Linguistic Harmony in Arabic Rhetorical Devices," Al-Dirasat Al-Islamiyyah, 2023.'
-    ],
-    contactInfo: 'Arabic Dept Office, Ground Floor, Humanities Block'
-  },
-  // History
-  {
-    id: 'prof-shahid-khan',
-    deptId: 'history',
-    name: 'Shahid Khan',
-    designation: 'Associate Professor & Head',
-    specialization: 'South Asian History',
-    email: 'shahid.history@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male2.png`,
-    qualification: 'M.Phil. in History, University of Peshawar',
-    biography: 'Shahid Khan specializes in the regional history of the Khyber Pass and the Gandhara civilization. He organizes historical trips for students.',
-    researchInterests: ['Ancient Gandhara History', 'KP Political History'],
+    id: 'sami-ullah-urdu',
+    deptId: 'urdu',
+    name: 'Sami Ullah',
+    designation: 'Lecturer in Urdu',
+    specialization: 'Urdu Literature & Linguistics',
+    email: 'sami.urdu2233@gmail.com',
+    photo: facultyPhoto('Samiullah.jpg'),
+    qualification: 'BS Urdu',
+    biography: 'Sami Ullah teaches Urdu literature and linguistics on a critical basis at Government Degree College Hayatabad, Peshawar.',
+    researchInterests: ['Urdu literature', 'Linguistics'],
     publications: [],
-    contactInfo: 'History Dept, Humanities Block, GDC Hayatabad'
+    contactInfo: 'GDC Hayatabad, Peshawar'
   },
-  // Geography
+
+  // Islamic Studies
   {
-    id: 'dr-yasir-shah',
-    deptId: 'geography',
-    name: 'Yasir Shah',
-    designation: 'Assistant Professor & Head',
-    specialization: 'GIS & Remote Sensing',
-    email: 'yasir.geog@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'Ph.D. in Geography, University of Peshawar',
-    biography: 'Yasir Shah teaches physical geography and guides mapping practicums using GIS platforms. He coordinates academic environmental surveys.',
-    researchInterests: ['GIS applications in Urban Planning', 'Glacier Dynamics in Northern Pakistan'],
-    publications: [
-      'Shah, Y. "Urban Expansion Analysis of Peshawar Valley using RS Data," Pakistan Geographical Review, 2022.'
-    ],
-    contactInfo: 'Geography Laboratory Room, GDC Hayatabad'
+    id: 'abdul-shakoor',
+    deptId: 'islamic-studies',
+    name: 'Abdul Shakoor',
+    designation: 'Associate Professor',
+    specialization: 'Islamic Education & Arabic',
+    email: 'shakoorabdul15576@gmail.com',
+    photo: facultyPhoto('Abdul Shakoor.jpg'),
+    qualification: 'Al-Shahadat-ul-Aalamia (MA Islamiyat / Arabic)',
+    biography: 'Abdul Shakoor is Associate Professor in Islamic Education / Arabic at Hayatabad Degree College. He is a resident of Tehkal Bala, Peshawar, and a research scholar in Islamic topics.',
+    researchInterests: ['Islamic studies'],
+    publications: [],
+    contactInfo: 'Govt. Degree College, Phase 6, Hayatabad, Peshawar'
   },
+  {
+    id: 'sami-ullah-islamic-studies',
+    deptId: 'islamic-studies',
+    name: 'Sami Ullah',
+    designation: 'Lecturer',
+    specialization: 'Islamic Studies',
+    email: 'samiislamiyat@gmail.com',
+    photo: '',
+    qualification: 'MS Islamic Studies',
+    biography: 'Sami Ullah is Lecturer in Islamic Studies at Government Degree College Hayatabad, Peshawar.',
+    researchInterests: ['Islamic Studies'],
+    publications: [],
+    contactInfo: 'Hayatabad, Peshawar'
+  },
+
   // Economics
   {
-    id: 'prof-waheed-ullah',
+    id: 'amjad-ali',
     deptId: 'economics',
-    name: 'Waheed Ullah',
-    designation: 'Associate Professor & Head',
-    specialization: 'Development Economics & Public Finance',
-    email: 'waheed.econ@gdchayatabad.edu.pk',
-    photo: `${baseUrl}faculty/male1.png`,
-    qualification: 'M.Phil. in Economics, University of Peshawar',
-    biography: 'Waheed Ullah has taught economics to intermediate and degree classes for over 15 years. He oversees budgeting seminars and acts as student advisor.',
-    researchInterests: ['Public Debt in Pakistan', 'KP Local Economy Dynamics'],
+    name: 'Amjad Ali',
+    designation: 'Associate Professor',
+    specialization: 'Economics',
+    email: 'amjadalikhan1148@gmail.com',
+    photo: facultyPhoto('amjad ali.jpg'),
+    qualification: 'PhD in Economics',
+    biography: 'Amjad Ali is Associate Professor of Economics at GDC Hayatabad, Peshawar. He is known as a hard worker, kind-hearted, and cooperative colleague.',
+    researchInterests: [],
     publications: [],
-    contactInfo: 'Economics Wing, Admin Block, GDC Hayatabad'
+    contactInfo: 'GDC Hayatabad, Peshawar'
+  },
+  {
+    id: 'ahmad-arsalan',
+    deptId: 'economics',
+    name: 'Ahmad Arsalan',
+    designation: 'Lecturer',
+    specialization: 'Economics',
+    email: 'ahmadarsalan46@gmail.com',
+    photo: facultyPhoto('ahmad arsalan.jpg'),
+    qualification: 'BS Economics, IMSciences Peshawar',
+    biography: 'Ahmad Arsalan studied BS Economics from IMSciences Peshawar and is currently serving as Lecturer at GDC Hayatabad.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'GDC, Phase 6, Hayatabad Peshawar'
+  },
+
+  // College Faculty — subject department was not named in the submitted profile
+  {
+    id: 'gohar-rehman',
+    deptId: 'additional-faculty',
+    name: 'Gohar Rehman',
+    designation: 'Lecturer',
+    specialization: 'College Teaching',
+    email: 'goharrehman796@gmail.com',
+    photo: facultyPhoto('gohar rehman.jpg'),
+    qualification: 'M.Sc., M.Ed.',
+    biography: 'Gohar Rehman is Lecturer at Government Degree College Hayatabad, Peshawar. He belongs to Garhi Faizullah, Peshawar (date of birth 2 August 1988). His submitted profile listed Higher Education Department as the parent department and did not name a subject department.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'GDC Hayatabad'
+  },
+
+  // Support & Services
+  {
+    id: 'aamir-khan',
+    deptId: 'administration',
+    name: 'Aamir Khan',
+    designation: 'Senior Clerk',
+    specialization: 'Pupil Fund Account & College Finance',
+    email: 'amirqacc123@gmail.com',
+    photo: facultyPhoto('AAMIR KHAN.png'),
+    qualification: 'Master in Finance',
+    biography: 'Aamir Khan serves as Senior Clerk at Government Degree College Hayatabad, Peshawar. He performs duties with dedication, sincerity, and responsibility, and maintains the Pupil Fund Account accurately and systematically. He ensures proper recording of all receipts, payments, and financial transactions, and keeps account records, vouchers, cheques, and supporting documents properly organized. He prepares statements, reconciles the account regularly, and ensures that funds are utilized strictly according to approved rules and guidelines. He completes financial work within the prescribed time, maintains transparency in all transactions, and cooperates with the Principal, DDO, and other concerned officials in financial matters.',
+    researchInterests: [],
+    publications: [],
+    contactInfo: 'Govt. Degree College Hayatabad, Peshawar, Phase 6, Sector F-2'
   }
 ];

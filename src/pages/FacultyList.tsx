@@ -25,6 +25,7 @@ export default function FacultyList() {
 
   // Filter faculty members of this department
   const members = FACULTY_MEMBERS.filter((m) => m.deptId === department.id);
+  const isSupport = department.facultyCategory === 'Support Services';
 
   // Animation variants
   const containerVariants = {
@@ -57,9 +58,12 @@ export default function FacultyList() {
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <span className="text-academy-gold font-bold tracking-widest uppercase text-xs mb-2 block">Faculty Roster</span>
+              <span className="text-academy-gold font-bold tracking-widest uppercase text-xs mb-2 block">
+                {isSupport ? 'Staff Roster' : 'Faculty Roster'}
+              </span>
               <h1 className="text-4xl md:text-5xl font-bold text-academy-green">
-                {department.name} <span className="text-slate-400 font-serif">Faculty</span>
+                {department.name}{' '}
+                <span className="text-slate-400 font-serif">{isSupport ? 'Staff' : 'Faculty'}</span>
               </h1>
             </div>
             <Link to="/faculty" className="inline-flex items-center gap-2 text-academy-green font-bold hover:underline self-start md:self-auto hover-scale">
@@ -85,25 +89,28 @@ export default function FacultyList() {
                   key={member.id}
                   className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover-lift hover-glow flex flex-col justify-between"
                 >
-                  <div className="p-8">
-                    {/* Faculty Photo Container */}
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 relative shadow-inner group">
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => {
-                          // Fallback to styled SVG representation if image fails to load
-                          (e.target as HTMLElement).style.display = 'none';
-                        }}
-                      />
-                      {/* Overlay indicator */}
-                      <div className="absolute top-4 right-4 bg-academy-green text-white p-2 rounded-xl shadow-md">
+                  <div>
+                    <div className="aspect-square bg-slate-200 relative overflow-hidden">
+                      {member.photo ? (
+                        <img
+                          src={member.photo}
+                          alt={member.name}
+                          className="absolute inset-0 h-full w-full object-cover object-top"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                          }}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
+                          <User className="text-slate-300" size={64} />
+                        </div>
+                      )}
+                      <div className="absolute top-4 right-4 bg-academy-green text-white p-2 rounded-xl shadow-md z-10">
                         <GraduationCap size={18} />
                       </div>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="p-8 space-y-3">
                       <h3 className="text-2xl font-bold text-academy-green leading-snug">
                         {member.name}
                       </h3>
@@ -113,7 +120,13 @@ export default function FacultyList() {
                       
                       <div className="pt-2 space-y-2 border-t border-slate-100">
                         <div>
-                          <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 block">Research Area</span>
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 block">Qualification</span>
+                          <span className="text-slate-700 text-sm font-medium">{member.qualification}</span>
+                        </div>
+                        <div>
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 block">
+                            {isSupport ? 'Area of Work' : 'Specialization'}
+                          </span>
                           <span className="text-slate-700 text-sm font-medium">{member.specialization}</span>
                         </div>
                         
@@ -145,9 +158,13 @@ export default function FacultyList() {
           ) : (
             <div className="text-center py-16 bg-white border border-slate-100 rounded-[2.5rem] p-10 max-w-2xl mx-auto shadow-sm">
               <User className="mx-auto text-slate-300 mb-6" size={48} />
-              <h3 className="text-xl font-bold text-academy-green mb-2">No Faculty Registered</h3>
+              <h3 className="text-xl font-bold text-academy-green mb-2">
+                {isSupport ? 'No Staff Registered' : 'No Faculty Registered'}
+              </h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                Teaching assignments and faculty lists are currently being updated for the upcoming session. Please check back later.
+                {isSupport
+                  ? 'Staff listings for this office are currently being updated. Please check back later.'
+                  : 'Teaching assignments and faculty lists are currently being updated for the upcoming session. Please check back later.'}
               </p>
               <Link to="/faculty" className="btn-secondary text-sm px-8 py-3.5 inline-flex items-center gap-2 hover-scale">
                 Go to Departments

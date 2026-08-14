@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Microscope, Leaf, Users, Landmark, FlaskConical, Globe2, ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
-import { DEPARTMENTS, Department } from '../data/facultyData';
+import { DEPARTMENTS } from '../data/facultyData';
 
 type Category = 'Physical Sciences' | 'Biological Sciences' | 'Social Sciences & Humanities' | 'Support Services';
 
@@ -38,13 +38,6 @@ export default function Faculty() {
 
   // Custom static support services for the 'Support Services' category
   const supportServices = [
-    {
-      id: 'admin',
-      name: 'College Administration',
-      overview: 'The administrative wing coordinates academic sessions, admissions, financial affairs, and board/university examinations under the leadership of the Principal.',
-      programs: ['Principal Office', 'Admissions Desk', 'Registrar & Student Records', 'Accounts Section'],
-      icon: <Landmark size={28} />
-    },
     {
       id: 'library',
       name: 'Libraries & Learning Resources',
@@ -106,8 +99,7 @@ export default function Faculty() {
             layout
             className="grid grid-cols-1 lg:grid-cols-2 gap-10"
           >
-            {activeCategory !== 'Support Services' ? (
-              filteredDepts.map((dept) => (
+            {filteredDepts.map((dept) => (
                 <motion.div
                   layout
                   initial={{ opacity: 0, y: 20 }}
@@ -123,9 +115,10 @@ export default function Faculty() {
                         {activeCategory === 'Physical Sciences' && <FlaskConical size={28} />}
                         {activeCategory === 'Biological Sciences' && <Leaf size={28} />}
                         {activeCategory === 'Social Sciences & Humanities' && <Globe2 size={28} />}
+                        {activeCategory === 'Support Services' && <Landmark size={28} />}
                       </div>
                       <span className="text-xs font-bold uppercase tracking-widest text-academy-gold bg-academy-gold/10 px-3 py-1 rounded-full">
-                        {activeCategory}
+                        {activeCategory === 'Support Services' ? 'Support & Services' : activeCategory}
                       </span>
                     </div>
 
@@ -141,7 +134,9 @@ export default function Faculty() {
                     </div>
 
                     <div className="mb-8">
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Programs Offered</h4>
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                        {activeCategory === 'Support Services' ? 'Key Functions' : 'Programs Offered'}
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {dept.programs.map((p, index) => (
                           <span
@@ -157,20 +152,20 @@ export default function Faculty() {
 
                   <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                     <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
-                      <Users size={16} /> Verified Academic Roster
+                      <Users size={16} /> {activeCategory === 'Support Services' ? 'Verified Staff Roster' : 'Verified Academic Roster'}
                     </span>
                     <Link
                       to={`/departments/${dept.id}/faculty`}
                       className="btn-primary flex items-center gap-2 text-sm py-3 px-6 hover-scale hover-glow"
                     >
-                      Faculty Members
+                      {activeCategory === 'Support Services' ? 'Staff Members' : 'Faculty Members'}
                       <ArrowRight size={16} />
                     </Link>
                   </div>
                 </motion.div>
-              ))
-            ) : (
-              // Support Services listing
+              ))}
+
+            {activeCategory === 'Support Services' &&
               supportServices.map((service) => (
                 <motion.div
                   layout
@@ -230,8 +225,7 @@ export default function Faculty() {
                     </Link>
                   </div>
                 </motion.div>
-              ))
-            )}
+              ))}
           </motion.div>
         </div>
       </section>

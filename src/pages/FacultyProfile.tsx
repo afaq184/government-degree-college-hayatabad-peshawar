@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Mail, MapPin, GraduationCap, BookOpen, Bookmark, Globe, Linkedin } from 'lucide-react';
+import { ArrowLeft, Mail, MapPin, GraduationCap, BookOpen, Bookmark, Globe, Linkedin, User, BadgeCheck } from 'lucide-react';
 import { FACULTY_MEMBERS, DEPARTMENTS } from '../data/facultyData';
 
 export default function FacultyProfile() {
@@ -39,12 +39,21 @@ export default function FacultyProfile() {
               
               {/* Photo & Identity Card */}
               <div className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 shadow-sm text-center">
-                <div className="aspect-square rounded-2xl overflow-hidden mb-5 bg-slate-100 shadow-inner max-w-[200px] md:max-w-[260px] mx-auto relative border border-slate-100">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center"
-                  />
+                <div className="aspect-square rounded-2xl overflow-hidden mb-5 bg-slate-200 shadow-inner max-w-[220px] md:max-w-[260px] mx-auto relative border border-slate-100">
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="absolute inset-0 h-full w-full object-cover object-top"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
+                      <User className="text-slate-300" size={72} />
+                    </div>
+                  )}
                 </div>
                 
                 <h1 className="text-2xl md:text-3xl font-bold text-academy-green leading-snug mb-2">
@@ -144,6 +153,28 @@ export default function FacultyProfile() {
               {/* Profile details block */}
               <div className="bg-white border border-slate-100 rounded-3xl p-6 md:p-10 lg:p-12 shadow-sm space-y-8 md:space-y-10">
                 
+                {/* Designation & Department */}
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-academy-green border-b border-slate-100 pb-4 mb-4 flex items-center gap-3">
+                    <BadgeCheck size={22} className="text-academy-gold shrink-0" />
+                    Designation
+                  </h2>
+                  <div className="bg-academy-green/5 border border-academy-green/10 p-5 rounded-2xl">
+                    <p className="text-academy-green font-bold text-base md:text-lg">
+                      {member.designation}
+                    </p>
+                    {department && (
+                      <p className="text-slate-600 text-sm mt-1">{department.name}</p>
+                    )}
+                    {member.specialization && (
+                      <p className="text-slate-500 text-sm mt-2">
+                        <span className="font-semibold text-slate-600">Specialization: </span>
+                        {member.specialization}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
                 {/* Biography & Intro */}
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-academy-green border-b border-slate-100 pb-4 mb-4 flex items-center gap-3">
@@ -169,6 +200,7 @@ export default function FacultyProfile() {
                 </div>
 
                 {/* Research Interests */}
+                {member.researchInterests.length > 0 && (
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-academy-green border-b border-slate-100 pb-4 mb-5 flex items-center gap-3">
                     <Bookmark size={22} className="text-academy-gold shrink-0" />
@@ -185,35 +217,32 @@ export default function FacultyProfile() {
                     ))}
                   </div>
                 </div>
+                )}
 
                 {/* Publications */}
+                {member.publications.length > 0 && (
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-academy-green border-b border-slate-100 pb-4 mb-5 flex items-center gap-3">
                     <BookOpen size={22} className="text-academy-gold shrink-0" />
                     Representative Publications
                   </h2>
-                  {member.publications.length > 0 ? (
-                    <ul className="space-y-3 md:space-y-4">
-                      {member.publications.map((pub, index) => (
-                        <li
-                          key={index}
-                          className="flex gap-3 md:gap-4 p-4 md:p-5 bg-slate-50 border border-slate-100 rounded-2xl items-start hover:bg-academy-cream transition-colors duration-300"
-                        >
-                          <div className="bg-academy-green text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 shadow-sm">
-                            {index + 1}
-                          </div>
-                          <p className="text-slate-700 font-medium text-xs md:text-sm leading-relaxed">
-                            {pub}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-slate-500 italic text-sm">
-                      Publications registry is currently being indexed by the HED databases.
-                    </p>
-                  )}
+                  <ul className="space-y-3 md:space-y-4">
+                    {member.publications.map((pub, index) => (
+                      <li
+                        key={index}
+                        className="flex gap-3 md:gap-4 p-4 md:p-5 bg-slate-50 border border-slate-100 rounded-2xl items-start hover:bg-academy-cream transition-colors duration-300"
+                      >
+                        <div className="bg-academy-green text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 shadow-sm">
+                          {index + 1}
+                        </div>
+                        <p className="text-slate-700 font-medium text-xs md:text-sm leading-relaxed">
+                          {pub}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+                )}
 
               </div>
 
