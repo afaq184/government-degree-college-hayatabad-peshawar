@@ -253,7 +253,11 @@ export default function Contact() {
                     <span className="text-slate-800 font-bold text-academy-gold">08:30 - 12:30</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Sat - Sun:</span>
+                    <span className="text-slate-500">Saturday:</span>
+                    <span className="text-slate-800 font-bold">08:30 - 14:30</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-500">Sunday:</span>
                     <span className="text-slate-800 font-bold">Closed</span>
                   </div>
                   <p className="text-[10px] text-slate-400 italic mt-4">Hours may change during Ramazan or examinations - confirm by phone.</p>
